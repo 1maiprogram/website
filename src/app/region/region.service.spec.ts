@@ -2,19 +2,19 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { RegionService } from './region.service';
+import { RegionService } from "./region.service";
 
-describe('RegionService', () => {
-  let service: RegionService;
+describe("RegionService", () => {
+    let service: RegionService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(RegionService);
-  });
+    beforeEach(() => {
+        TestBed.configureTestingModule({});
+        service = TestBed.inject(RegionService);
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+    it("should be created", () => {
+        expect(service).toBeTruthy();
+    });
 });
