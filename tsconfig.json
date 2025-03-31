@@ -15,6 +15,12 @@
         "experimentalDecorators": true,
         "moduleResolution": "bundler",
         "importHelpers": true,
+        "resolveJsonModule": true,
+        "paths": {
+            "@assets/*": [
+                "./src/assets/*"
+            ],
+        },
         "target": "ES2022",
         "module": "ES2022"
     },
