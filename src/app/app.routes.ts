@@ -4,4 +4,9 @@
 
 import { Routes } from "@angular/router";
 
-export const routes: Routes = [];
+import { FylkeSelectorComponent } from "./selector/fylke-selector/fylke-selector.component";
+
+export const routes: Routes = [
+    { path: '',   redirectTo: '/2025', pathMatch: 'full' },
+    { path: '2025', component: FylkeSelectorComponent },
+];
