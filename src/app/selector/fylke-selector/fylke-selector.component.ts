@@ -6,6 +6,7 @@ import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { Fylke, RegionService } from "../../region/region.service";
+import { nameSortFunction } from "@shared/utils";
 
 @Component({
     selector: "app-fylke-selector",
@@ -22,5 +23,6 @@ export class FylkeSelectorComponent {
         public regionService: RegionService,
     ) {
         this.fylker = regionService.getNoFylkeArray();
+        this.fylker.sort(nameSortFunction);
     }
 }
