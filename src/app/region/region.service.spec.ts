@@ -17,4 +17,34 @@ describe("RegionService", () => {
     it("should be created", () => {
         expect(service).toBeTruthy();
     });
+
+    it("should retrieve all fylker", () => {
+        // Arrange
+
+        // Act
+        const fylke = service.getNoFylkeArray();
+
+        // Assert
+        expect(fylke.length).toBe(16);
+    });
+
+    it("should retrieve fylke by code", () => {
+        // Arrange
+        const kommuner =  [
+            "Færder",
+            "Holmestrand",
+            "Horten",
+            "Larvik",
+            "Sandefjord",
+            "Tønsberg",
+        ];
+
+        // Act
+        const result = service.getNoFylkeByCode(39);
+
+        // Assert
+        expect(result).toBeDefined();
+        expect(result?.name).toBe("Vestfold");
+        expect(result?.kommuner.map(k => k.name).sort()).toEqual(kommuner);
+    });
 });
