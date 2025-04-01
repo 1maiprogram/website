@@ -4,21 +4,36 @@
 
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { createSpyFromClass, Spy } from "jasmine-auto-spies";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, convertToParamMap, Router } from "@angular/router";
 
 import { KommuneSelectorComponent } from "./kommune-selector.component";
+import { Kommune, RegionService } from "../../region/region.service";
+
+const osloKommune = new Kommune(301, 3, 'Oslo');
 
 describe("KommuneSelectorComponent", () => {
     let component: KommuneSelectorComponent;
     let fixture: ComponentFixture<KommuneSelectorComponent>;
     let activatedRouteSpy: Spy<ActivatedRoute>;
+    let regionServiceSpy: Spy<RegionService>;
 
     beforeEach(async () => {
         activatedRouteSpy = createSpyFromClass(ActivatedRoute);
+        regionServiceSpy = createSpyFromClass(RegionService);
+        regionServiceSpy.getNoKommunerByFylke.and.returnValue([osloKommune]);
         await TestBed.configureTestingModule({
             imports: [KommuneSelectorComponent],
             providers: [
-                { provide: ActivatedRoute, useValue: activatedRouteSpy },
+                {
+                    provide: ActivatedRoute,
+                    useValue: {
+                        snapshot: {
+                            paramMap: convertToParamMap({ fylke: "Oslo" }),
+                        },
+                    },
+                },
+                Router, // Dependency needed by RouterLink.
+                { provide: RegionService, useValue: regionServiceSpy },
             ],
         }).compileComponents();
 
