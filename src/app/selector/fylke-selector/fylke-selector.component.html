@@ -4,4 +4,8 @@ SPDX-FileCopyrightText: 2025 Håkon Løvdal <kode@denkule.no>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
-<p>fylke-selector works!</p>
+<p>Velg fylke</p>
+
+<ul>
+    <li *ngFor="let fylke of fylker">{{ fylke.name }}</li>
+</ul>
