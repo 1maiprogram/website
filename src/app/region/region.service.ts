@@ -62,4 +62,13 @@ export class RegionService {
     getNoFylkeByCode(code: number): FylkeWithKommuner | undefined {
         return this._fylkerWithKommuner.find(f => f.code === code);
     }
+
+    getNoKommunerByFylke(name: string): Kommune[] {
+        const fylke = this._fylkerWithKommuner.find(f => f.name === name);
+        if (!fylke) {
+            console.error(`Unable to find fylke by name ${name}`);
+            return [];
+        }
+        return fylke.kommuner;
+    }
 }
