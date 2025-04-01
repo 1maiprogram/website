@@ -3,16 +3,23 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { createSpyFromClass, Spy } from 'jasmine-auto-spies';
 
 import { FylkeSelectorComponent } from "./fylke-selector.component";
+import { ActivatedRoute } from "@angular/router";
 
 describe("FylkeSelectorComponent", () => {
     let component: FylkeSelectorComponent;
     let fixture: ComponentFixture<FylkeSelectorComponent>;
+    let activatedRouteSpy: Spy<ActivatedRoute>;
 
     beforeEach(async () => {
+        activatedRouteSpy = createSpyFromClass(ActivatedRoute);
         await TestBed.configureTestingModule({
             imports: [FylkeSelectorComponent],
+            providers: [
+                { provide: ActivatedRoute, useValue: activatedRouteSpy },
+            ],
         }).compileComponents();
 
         fixture = TestBed.createComponent(FylkeSelectorComponent);

@@ -4,6 +4,7 @@
 
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { RouterLink } from '@angular/router';
 
 import { Fylke, RegionService } from "../../region/region.service";
 import { nameSortFunction } from "@shared/utils";
@@ -12,6 +13,7 @@ import { nameSortFunction } from "@shared/utils";
     selector: "app-fylke-selector",
     imports: [
         CommonModule,
+        RouterLink,
     ],
     templateUrl: "./fylke-selector.component.html",
     styleUrl: "./fylke-selector.component.scss",
