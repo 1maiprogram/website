@@ -2,26 +2,27 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { KommuneComponent } from './kommune.component';
+import { KommuneComponent } from "./kommune.component";
 
-describe('KommuneComponent', () => {
-  let component: KommuneComponent;
-  let fixture: ComponentFixture<KommuneComponent>;
+describe("KommuneComponent", () => {
+    let component: KommuneComponent;
+    let fixture: ComponentFixture<KommuneComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [KommuneComponent]
-    })
-    .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [
+                KommuneComponent,
+            ],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(KommuneComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(KommuneComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });
