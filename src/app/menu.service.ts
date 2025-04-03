@@ -2,12 +2,13 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: "root",
 })
 export class MenuService {
-
-  constructor() { }
+    constructor(
+    ) {
+    }
 }
