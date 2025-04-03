@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import {
     ActivatedRoute,
@@ -12,6 +12,7 @@ import {
 
 import { nameSortFunction } from "@shared/utils";
 import { Kommune, RegionService } from "../../region/region.service";
+import { MenuService } from "../../menu.service";
 
 @Component({
     selector: "app-kommune-selector",
@@ -22,14 +23,22 @@ import { Kommune, RegionService } from "../../region/region.service";
     templateUrl: "./kommune-selector.component.html",
     styleUrl: "./kommune-selector.component.scss",
 })
-export class KommuneSelectorComponent implements OnInit {
+export class KommuneSelectorComponent implements OnInit, OnDestroy {
     public kommuner: Kommune[] = [];
 
     constructor(
         public regionService: RegionService,
         private readonly route: ActivatedRoute,
         readonly router: Router,
+        public menuService: MenuService,
     ) {
+        const m = this.menuService.getMenuItem("KommuneSelector");
+        m.visibleSignal.set(true);
+    }
+
+    ngOnDestroy(): void {
+        const m = this.menuService.getMenuItem("KommuneSelector");
+        m.visibleSignal.set(false);
     }
 
     ngOnInit() {
