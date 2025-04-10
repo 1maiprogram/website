@@ -15,6 +15,8 @@ export class MenuItem {
     textSignal: WritableSignal<string>;
     urlSignal: WritableSignal<string>;
     visibleSignal: WritableSignal<boolean>;
+    parent?: MenuItem = undefined;
+    child?: MenuItem = undefined;
     constructor(
         value: string,
         url: string,
@@ -37,6 +39,11 @@ export class MenuService {
 
     constructor(
     ) {
+        this.fylkeSelectorMenuItem.child = this.kommuneSelectorMenuItem;
+        this.kommuneSelectorMenuItem.parent = this.fylkeSelectorMenuItem;
+        this.kommuneSelectorMenuItem.child = this.kommuneMenuItem;
+        this.kommuneMenuItem.parent = this.kommuneSelectorMenuItem;
+
         this.menuItemsMap.set(MenuItemKeyObj.FylkeSelector, this.fylkeSelectorMenuItem);
         this.menuItemsMap.set(MenuItemKeyObj.KommuneSelector, this.kommuneSelectorMenuItem);
         this.menuItemsMap.set(MenuItemKeyObj.Kommune, this.kommuneMenuItem);
