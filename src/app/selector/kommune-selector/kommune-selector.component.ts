@@ -13,6 +13,7 @@ import {
 import { nameSortFunction } from "@shared/utils";
 import { Kommune, RegionService } from "../../region/region.service";
 import { MenuService } from "../../menu.service";
+import { paramMapNameFylke } from "../../app.routes.constants";
 
 @Component({
     selector: "app-kommune-selector",
@@ -42,7 +43,7 @@ export class KommuneSelectorComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        const fylke = this.route.snapshot.paramMap.get("fylke");
+        const fylke = this.route.snapshot.paramMap.get(paramMapNameFylke);
         if (!fylke) {
             console.error(`Invalid fylke value: ${fylke}`);
             return;
