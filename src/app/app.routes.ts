@@ -8,10 +8,13 @@ import { FylkeSelectorComponent } from "./selector/fylke-selector/fylke-selector
 import { KommuneSelectorComponent } from "./selector/kommune-selector/kommune-selector.component";
 import {
     paramMapNameFylke,
+    paramMapNameKommune,
 } from "./app.routes.constants";
+import { KommuneComponent } from "./kommune/kommune/kommune.component";
 
 export const routes: Routes = [
     { path: '',   redirectTo: '/2025', pathMatch: 'full' },
     { path: '2025', component: FylkeSelectorComponent },
     { path: `2025/:${paramMapNameFylke}`, component: KommuneSelectorComponent },
+    { path: `2025/:${paramMapNameFylke}/:${paramMapNameKommune}`, component: KommuneComponent },
 ];

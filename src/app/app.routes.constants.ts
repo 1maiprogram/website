@@ -8,3 +8,4 @@
 // a separate file.
 
 export const paramMapNameFylke: string = "fylke";
+export const paramMapNameKommune: string = "kommune";
