@@ -19,13 +19,11 @@ import { MenuItem, MenuService } from "./menu.service";
     styleUrl: "./app.component.scss",
 })
 export class AppComponent {
-    public menuItems: MenuItem[] = [];
+    public menuItems: MenuItem[];
 
     constructor(
         menuService: MenuService,
     ) {
-        this.menuItems.push(menuService.getMenuItem("FylkeSelector"))
-        this.menuItems.push(menuService.getMenuItem("KommuneSelector"))
-        this.menuItems.push(menuService.getMenuItem("Kommune"))
+        this.menuItems = menuService.getMenuItems();
     }
 }

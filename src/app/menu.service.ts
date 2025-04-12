@@ -49,6 +49,14 @@ export class MenuService {
         this.menuItemsMap.set(MenuItemKeyObj.Kommune, this.kommuneMenuItem);
     }
 
+    getMenuItems(): MenuItem[] {
+        return [
+            this.fylkeSelectorMenuItem,
+            this.kommuneSelectorMenuItem,
+            this.kommuneMenuItem,
+        ];
+    }
+
     getMenuItem(menuItemKey: MenuItemKey): MenuItem {
         const menuItem = this.menuItemsMap.get(menuItemKey);
         if (!menuItem) {
