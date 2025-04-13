@@ -4,9 +4,8 @@
 
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ResolveEnd, Router, RouterLink } from '@angular/router';
-import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { filter } from "rxjs";
+import { Router, RouterLink } from '@angular/router';
+import { UntilDestroy } from '@ngneat/until-destroy';
 
 import { Fylke, RegionService } from "../../region/region.service";
 import { nameSortFunction } from "@shared/utils";
@@ -33,16 +32,6 @@ export class FylkeSelectorComponent {
         this.fylker = regionService.getNoFylkeArray();
         this.fylker.sort(nameSortFunction);
 
-        // Figure out where we are navigating to when exiting this component.
-        router.events
-            .pipe(
-                filter(e => e instanceof ResolveEnd),
-                filter(e => e.url.split("/").length === 3),  // e.g. "/2025/Agder"
-                untilDestroyed(this)
-            )
-            .subscribe(e => {
-                const m = menuService.getMenuItem("KommuneSelector");
-                m.urlSignal.set(e.url);
-            });
+        this.menuService.activateMenuItem("FylkeSelector");
     }
 }

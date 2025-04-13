@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import {
     ActivatedRoute,
@@ -24,7 +24,7 @@ import { paramMapNameFylke } from "../../app.routes.constants";
     templateUrl: "./kommune-selector.component.html",
     styleUrl: "./kommune-selector.component.scss",
 })
-export class KommuneSelectorComponent implements OnInit, OnDestroy {
+export class KommuneSelectorComponent implements OnInit {
     public kommuner: Kommune[] = [];
 
     constructor(
@@ -33,13 +33,7 @@ export class KommuneSelectorComponent implements OnInit, OnDestroy {
         readonly router: Router,
         public menuService: MenuService,
     ) {
-        const m = this.menuService.getMenuItem("KommuneSelector");
-        m.visibleSignal.set(true);
-    }
-
-    ngOnDestroy(): void {
-        const m = this.menuService.getMenuItem("KommuneSelector");
-        m.visibleSignal.set(false);
+        this.menuService.activateMenuItem("KommuneSelector");
     }
 
     ngOnInit() {
@@ -48,6 +42,8 @@ export class KommuneSelectorComponent implements OnInit, OnDestroy {
             console.error(`Invalid fylke value: ${fylke}`);
             return;
         }
+        const mi = this.menuService.getMenuItem("KommuneSelector");
+        mi.urlSignal.set(`2025/${fylke}`);
         this.kommuner = this.regionService.getNoKommunerByFylke(fylke);
         if (this.kommuner.length === 0) {
             console.error(`No kommuner found for fylke ${fylke}`);

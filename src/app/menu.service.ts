@@ -64,4 +64,21 @@ export class MenuService {
         }
         return menuItem;
     }
+
+    activateMenuItem(menuItemKey: MenuItemKey) {
+        const activeMenuItem = this.getMenuItem(menuItemKey);
+        let mi: MenuItem | undefined = activeMenuItem;
+        do {
+            mi.visibleSignal.set(true);
+            mi = mi.parent;
+        } while (mi);
+
+        mi = activeMenuItem.child;
+        if (mi) {
+            do {
+                mi.visibleSignal.set(false);
+                mi = mi.child;
+            } while (mi);
+        }
+    }
 }
