@@ -2,7 +2,5 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Environment } from "./interface";
-
-export const environment: Environment = {
-};
+export interface Environment {
+}
