@@ -2,17 +2,47 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+import { CommonModule } from "@angular/common";
 import {
     Component,
+    OnInit,
 } from "@angular/core";
+import {
+    ActivatedRoute,
+} from "@angular/router";
+
+import { MenuItem, MenuService } from "../../menu.service";
+import { paramMapNameKommune } from "../../app.routes.constants";
 
 @Component({
     selector: "app-kommune",
     imports: [
+        CommonModule,
     ],
     templateUrl: "./kommune.component.html",
     styleUrl: "./kommune.component.scss",
 })
-export class KommuneComponent {
+export class KommuneComponent implements OnInit {
+    private readonly menuItem: MenuItem;
 
+    constructor(
+        private readonly route: ActivatedRoute,
+        readonly menuService: MenuService,
+    ) {
+        menuService.activateMenuItem("Kommune");
+        this.menuItem = menuService.getMenuItem("Kommune");
+    }
+
+    ngOnInit() {
+        const url: string = this.route.snapshot.url
+            .map((segment) => segment.path)
+            .join("/");
+        this.menuItem.urlSignal.set(url);
+        const kommune = this.route.snapshot.paramMap.get(paramMapNameKommune);
+        if (!kommune) {
+            console.error(`Invalid kommune value: ${kommune}`);
+            return;
+        }
+        this.menuItem.textSignal.set(kommune);
+    }
 }
