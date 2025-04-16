@@ -3,4 +3,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 export interface Environment {
+    supabaseUrl: string;
+    supabaseKey: string;
 }
