@@ -10,9 +10,17 @@ import {
 import {
     ActivatedRoute,
 } from "@angular/router";
+import {
+    Observable,
+    of,
+} from "rxjs";
 
 import { MenuItem, MenuService } from "../../menu.service";
-import { paramMapNameKommune } from "../../app.routes.constants";
+import {
+    paramMapNameFylke,
+    paramMapNameKommune,
+} from "../../app.routes.constants";
+import { Link, SupabaseService } from "../../supabase.service";
 
 @Component({
     selector: "app-kommune",
@@ -25,24 +33,34 @@ import { paramMapNameKommune } from "../../app.routes.constants";
 export class KommuneComponent implements OnInit {
     private readonly menuItem: MenuItem;
 
+    public links$: Observable<Link[]> = of([]);
+
     constructor(
         private readonly route: ActivatedRoute,
         readonly menuService: MenuService,
+        private readonly supabaseService: SupabaseService,
     ) {
         menuService.activateMenuItem("Kommune");
         this.menuItem = menuService.getMenuItem("Kommune");
     }
 
     ngOnInit() {
+        const year = this.route.snapshot.url.map((segment) => segment.path)[0];
         const url: string = this.route.snapshot.url
             .map((segment) => segment.path)
             .join("/");
         this.menuItem.urlSignal.set(url);
+        const fylke = this.route.snapshot.paramMap.get(paramMapNameFylke);
+        if (!fylke) {
+            console.error(`Invalid fylke value: ${fylke}`);
+            return;
+        }
         const kommune = this.route.snapshot.paramMap.get(paramMapNameKommune);
         if (!kommune) {
             console.error(`Invalid kommune value: ${kommune}`);
             return;
         }
         this.menuItem.textSignal.set(kommune);
+        this.links$ = this.supabaseService.getLinks(year, fylke, kommune);
     }
 }

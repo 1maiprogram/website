@@ -4,4 +4,10 @@ SPDX-FileCopyrightText: 2025 Håkon Løvdal <kode@denkule.no>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
-<p>kommune works!</p>
+<div>
+    <ul>
+        @for (link of links$ | async; track link) {
+            <li><a [href]="link.link">{{ link.description ?? 'Program' }}</a></li>
+        }
+    </ul>
+</div>
