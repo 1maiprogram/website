@@ -12,8 +12,11 @@ import {
 } from "@angular/router";
 import {
     BehaviorSubject,
+    concat,
     Observable,
     of,
+    skip,
+    switchMap,
 } from "rxjs";
 import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
 
@@ -23,12 +26,14 @@ import {
     paramMapNameKommune,
 } from "../../app.routes.constants";
 import { Link, SupabaseService } from "../../supabase.service";
+import { SpinnerComponent } from "../../shared/spinner/spinner.component";
 
 @UntilDestroy()
 @Component({
     selector: "app-kommune",
     imports: [
         CommonModule,
+        SpinnerComponent,
     ],
     templateUrl: "./kommune.component.html",
     styleUrl: "./kommune.component.scss",
@@ -37,6 +42,7 @@ export class KommuneComponent implements OnInit {
     private readonly menuItem: MenuItem;
 
     public links$ = new BehaviorSubject<Link[]>([]);
+    public loading$: Observable<boolean> = new BehaviorSubject<boolean>(true);
 
     constructor(
         private readonly route: ActivatedRoute,
@@ -75,5 +81,12 @@ export class KommuneComponent implements OnInit {
                 // https://github.com/supabase/supabase-js/issues/936
                 this.links$.next(links);
             });
+        this.loading$ = concat(
+            of(true),
+            this.links$.pipe(
+                skip(1), // Due to initial BehaviorSubject value []
+                switchMap((link) => of(false)),
+            ),
+        );
     }
 }

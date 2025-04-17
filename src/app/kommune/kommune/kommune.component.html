@@ -5,9 +5,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <div>
-    <ul>
-        @for (link of links$ | async; track link) {
-            <li><a [href]="link.link">{{ link.description ?? 'Program' }}</a></li>
-        }
-    </ul>
+    @if (loading$ | async) {
+        <app-spinner/>
+    } @else {
+        <ul>
+            @for (link of links$ | async; track link) {
+                <li><a [href]="link.link">{{ link.description ?? 'Program' }}</a></li>
+            }
+        </ul>
+    }
 </div>
