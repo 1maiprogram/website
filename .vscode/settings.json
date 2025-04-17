@@ -4,5 +4,7 @@
 		"Løvdal",
 		"supabase",
 		"zzzzzzzzzzzzzzzz-last"
-	]
+	],
+	"files.trimTrailingWhitespace": true,
+	"prettier.trailingComma": "all"
 }
