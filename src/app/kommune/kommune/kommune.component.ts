@@ -11,9 +11,11 @@ import {
     ActivatedRoute,
 } from "@angular/router";
 import {
+    BehaviorSubject,
     Observable,
     of,
 } from "rxjs";
+import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
 
 import { MenuItem, MenuService } from "../../menu.service";
 import {
@@ -22,6 +24,7 @@ import {
 } from "../../app.routes.constants";
 import { Link, SupabaseService } from "../../supabase.service";
 
+@UntilDestroy()
 @Component({
     selector: "app-kommune",
     imports: [
@@ -33,7 +36,7 @@ import { Link, SupabaseService } from "../../supabase.service";
 export class KommuneComponent implements OnInit {
     private readonly menuItem: MenuItem;
 
-    public links$: Observable<Link[]> = of([]);
+    public links$ = new BehaviorSubject<Link[]>([]);
 
     constructor(
         private readonly route: ActivatedRoute,
@@ -61,6 +64,16 @@ export class KommuneComponent implements OnInit {
             return;
         }
         this.menuItem.textSignal.set(kommune);
-        this.links$ = this.supabaseService.getLinks(year, fylke, kommune);
+        this.supabaseService
+            .getLinks(year, fylke, kommune)
+            .pipe(
+                untilDestroyed(this),
+            )
+            .subscribe((links) => {
+                // Using this intermediate observable variable to avoid
+                // "Acquiring an exclusive Navigator LockManager failed".
+                // https://github.com/supabase/supabase-js/issues/936
+                this.links$.next(links);
+            });
     }
 }
