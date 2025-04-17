@@ -2,26 +2,28 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SpinnerComponent } from './spinner.component';
 
-describe('SpinnerComponent', () => {
-  let component: SpinnerComponent;
-  let fixture: ComponentFixture<SpinnerComponent>;
+import { SpinnerComponent } from "./spinner.component";
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [SpinnerComponent]
-    })
-    .compileComponents();
+describe("SpinnerComponent", () => {
+    let component: SpinnerComponent;
+    let fixture: ComponentFixture<SpinnerComponent>;
 
-    fixture = TestBed.createComponent(SpinnerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [
+                SpinnerComponent,
+            ],
+        }).compileComponents();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+        fixture = TestBed.createComponent(SpinnerComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });
