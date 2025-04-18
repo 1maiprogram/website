@@ -2,26 +2,27 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { OppdateringComponent } from './oppdatering.component';
+import { OppdateringComponent } from "./oppdatering.component";
 
-describe('OppdateringComponent', () => {
-  let component: OppdateringComponent;
-  let fixture: ComponentFixture<OppdateringComponent>;
+describe("OppdateringComponent", () => {
+    let component: OppdateringComponent;
+    let fixture: ComponentFixture<OppdateringComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [OppdateringComponent]
-    })
-    .compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            imports: [
+                OppdateringComponent,
+            ],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(OppdateringComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(OppdateringComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });
