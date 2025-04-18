@@ -14,3 +14,19 @@ a {
     background-color: white;
     padding: 0.3em;
 }
+
+h1 {
+    text-align: center;
+}
+
+@media screen and (width >= 75rem) {
+    h1 {
+        font-size: 4em;
+    }
+}
+
+@media screen and (55em <= width <= 75em) {
+    h1 {
+        font-size: 3em;
+    }
+}
