@@ -19,14 +19,9 @@ repos:
     -   id: fix-byte-order-marker
     -   id: mixed-line-ending
     -   id: trailing-whitespace
-        exclude: |
-            (?x)^(
-                src/lib/mit/sortda.js$
-            )$
     -   id: end-of-file-fixer
         exclude: |
             (?x)^(
-                src/lib/mit/sortda.js$|
                 supabase/.branches/_current_branch$|
                 supabase/.temp/cli-latest$
             )$
