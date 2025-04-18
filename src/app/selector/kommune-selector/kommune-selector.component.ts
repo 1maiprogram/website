@@ -10,7 +10,6 @@ import {
     RouterLink,
 } from "@angular/router";
 
-import { nameSortFunction } from "@shared/utils";
 import { Kommune, RegionService } from "../../region/region.service";
 import { MenuService } from "../../menu.service";
 import { paramMapNameFylke } from "../../app.routes.constants";
@@ -49,6 +48,5 @@ export class KommuneSelectorComponent implements OnInit {
             console.error(`No kommuner found for fylke ${fylke}`);
             return;
         }
-        this.kommuner.sort(nameSortFunction);
     }
 }

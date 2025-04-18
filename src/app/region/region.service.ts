@@ -6,6 +6,7 @@ import { Injectable } from "@angular/core";
 
 import fylkeJson from "@assets/NO/2025/fylke.json";
 import kommuneJson from "@assets/NO/2025/kommune.json";
+import { nameSortFunction } from "@shared/utils";
 
 export type JsonElement = {
     code: string;
@@ -48,11 +49,15 @@ export class RegionService {
 
     constructor() {
         this._kommuner = kommuneJson.map(k => new Kommune(Number(k.code), Number(k.code.substring(0,2)), k.name));
+        this._kommuner.sort(nameSortFunction);
         this._fylker = fylkeJson.map(f => new Fylke(Number(f.code), f.name));
+        this._fylker.sort(nameSortFunction);
         this._fylkerWithKommuner = fylkeJson.map(f => {
             const kommuner = this._kommuner.filter(k => k.fylkeCode === Number(f.code));
+            kommuner.sort(nameSortFunction);
             return new FylkeWithKommuner(Number(f.code), f.name, kommuner);
         });
+        this._fylkerWithKommuner.sort(nameSortFunction);
     }
 
     getNoFylkeArray(): Fylke[] {

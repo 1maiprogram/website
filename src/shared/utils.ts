@@ -2,9 +2,8 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+import { AaModes, sortDaCmp } from "../lib/mit/sortda";
+
 export function nameSortFunction<T extends { name: string }>(a: T, b: T) {
-    if (a.name === b.name) {
-        return 0;
-    }
-    return a.name > b.name ? 1 : -1;
+    return sortDaCmp(a.name, b.name, AaModes.FIRST);
 }

@@ -8,7 +8,6 @@ import { Router, RouterLink } from '@angular/router';
 import { UntilDestroy } from '@ngneat/until-destroy';
 
 import { Fylke, RegionService } from "../../region/region.service";
-import { nameSortFunction } from "@shared/utils";
 import { MenuService } from "../../menu.service";
 
 @UntilDestroy()
@@ -30,8 +29,6 @@ export class FylkeSelectorComponent {
         readonly menuService: MenuService,
     ) {
         this.fylker = regionService.getNoFylkeArray();
-        this.fylker.sort(nameSortFunction);
-
         this.menuService.activateMenuItem("FylkeSelector");
     }
 }
