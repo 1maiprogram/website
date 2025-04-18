@@ -46,7 +46,7 @@ export class KommuneComponent implements OnInit {
 
     constructor(
         private readonly route: ActivatedRoute,
-        readonly menuService: MenuService,
+        private readonly menuService: MenuService,
         private readonly supabaseService: SupabaseService,
     ) {
         menuService.activateMenuItem("Kommune");
@@ -59,6 +59,15 @@ export class KommuneComponent implements OnInit {
             .map((segment) => segment.path)
             .join("/");
         this.menuItem.urlSignal.set(url);
+
+        // If the page is starting/loading directly at KommuneComponent (as
+        // opposed to first selecting fylke -> kommune), then the "Velg kommune"
+        // menu item will not have the url set, so set it here unconditionally.
+        // In worst case we just overwrite with the same information.
+        const idx = url.lastIndexOf("/");
+        const parentUrl = url.substring(0, idx);
+        this.menuService.getMenuItem("KommuneSelector").urlSignal.set(parentUrl);
+
         const fylke = this.route.snapshot.paramMap.get(paramMapNameFylke);
         if (!fylke) {
             console.error(`Invalid fylke value: ${fylke}`);
