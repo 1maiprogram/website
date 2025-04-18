@@ -52,19 +52,21 @@ function intArray(c: string, aamode: AaModesType) {
     return array;
 }
 
-export function sortDa(arr: string[], aamode: AaModesType) {
-    arr.sort(function (a, b) {
-        const d = intArray(a, aamode);
-        const e = intArray(b, aamode);
-        for (let f = 0; f < d.length; f++) {
-            if (d[f] != e[f]) {
-                if (f == e.length) {
-                    return 1; //d has more chars than e
-                } else {
-                    return d[f] - e[f];
-                }
+export function sortDaCmp(a: string, b: string, aamode: AaModesType): number {
+    const d = intArray(a, aamode);
+    const e = intArray(b, aamode);
+    for (let f = 0; f < d.length; f++) {
+        if (d[f] != e[f]) {
+            if (f == e.length) {
+                return 1; //d has more chars than e
+            } else {
+                return d[f] - e[f];
             }
         }
-        return -1; //e has more chars than d
-    });
+    }
+    return -1;
+};
+
+export function sortDa(arr: string[], aamode: AaModesType) {
+    arr.sort((a, b) => sortDaCmp(a, b, aamode));
 }
