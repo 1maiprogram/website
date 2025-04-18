@@ -13,5 +13,11 @@ SPDX-License-Identifier: GPL-3.0-or-later
                 <li><a [href]="link.link">{{ link.description ?? 'Program' }}</a></li>
             }
         </ul>
+        @if(noLinks$ | async) {
+            <div class="missing">
+                Desverre mangler informasjon for denne kommunen.
+                <a routerLink="/oppdatering">Kan du bidra?</a>
+            </div>
+        }
     }
 </div>

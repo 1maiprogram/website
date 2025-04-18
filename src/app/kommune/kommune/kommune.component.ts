@@ -9,6 +9,7 @@ import {
 } from "@angular/core";
 import {
     ActivatedRoute,
+    RouterLink,
 } from "@angular/router";
 import {
     BehaviorSubject,
@@ -34,6 +35,7 @@ import { SpinnerComponent } from "../../shared/spinner/spinner.component";
     imports: [
         CommonModule,
         SpinnerComponent,
+        RouterLink,
     ],
     templateUrl: "./kommune.component.html",
     styleUrl: "./kommune.component.scss",
@@ -42,6 +44,7 @@ export class KommuneComponent implements OnInit {
     private readonly menuItem: MenuItem;
 
     public links$ = new BehaviorSubject<Link[]>([]);
+    public noLinks$ = new BehaviorSubject<boolean>(false);
     public loading$: Observable<boolean> = new BehaviorSubject<boolean>(true);
 
     constructor(
@@ -89,6 +92,7 @@ export class KommuneComponent implements OnInit {
                 // "Acquiring an exclusive Navigator LockManager failed".
                 // https://github.com/supabase/supabase-js/issues/936
                 this.links$.next(links);
+                this.noLinks$.next(links.length === 0);
             });
         this.loading$ = concat(
             of(true),
