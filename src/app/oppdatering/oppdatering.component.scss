@@ -3,3 +3,26 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
+
+.content {
+    background-color: white;
+    padding: 1em;
+}
+
+pre {
+    white-space: pre-wrap;
+    overflow-x: auto;
+    background-color: lightgray;
+    padding: 1em;
+}
+
+@media (width >= 500px) {
+    .content {
+        border-radius: 25px;
+        margin: 2em;
+    }
+    pre {
+        padding: 2em;
+        margin: 2em;
+    }
+}

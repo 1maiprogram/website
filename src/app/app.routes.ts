@@ -11,10 +11,12 @@ import {
     paramMapNameKommune,
 } from "./app.routes.constants";
 import { KommuneComponent } from "./kommune/kommune/kommune.component";
+import { OppdateringComponent } from "./oppdatering/oppdatering.component";
 
 export const routes: Routes = [
     { path: '',   redirectTo: '/2025', pathMatch: 'full' },
     { path: '2025', component: FylkeSelectorComponent },
     { path: `2025/:${paramMapNameFylke}`, component: KommuneSelectorComponent },
     { path: `2025/:${paramMapNameFylke}/:${paramMapNameKommune}`, component: KommuneComponent },
+    { path: 'oppdatering', component: OppdateringComponent },
 ];

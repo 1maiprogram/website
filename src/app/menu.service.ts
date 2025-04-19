@@ -81,4 +81,10 @@ export class MenuService {
             } while (mi);
         }
     }
+
+    hideMenuItems() {
+        this.getMenuItems().forEach(menuItem => {
+            menuItem.visibleSignal.set(false);
+        });
+    }
 }
