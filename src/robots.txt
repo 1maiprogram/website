@@ -1,0 +1,6 @@
+# Disallow since it contains an email.
+User-agent: *
+Disallow: /oppdatering
+
+User-agent: *
+Allow: /
