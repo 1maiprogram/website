@@ -16,7 +16,7 @@ fylke.json: fylke.csv
 	reuse annotate --copyright="Håkon Løvdal <kode@denkule.no>" --license="CC-BY-4.0" fylke.json
 
 kommune.csv: 1710.csv
-	iconv -f iso88591 -t utf8 1710.csv | cut -d';' -f1,4 | sed 's/ -.*/"/' > kommune.csv
+	iconv -f iso88591 -t utf8 1710.csv | cut -d';' -f1,4 | sed 's/ -.*/"/; s/ (.*"/"/' > kommune.csv
 	reuse annotate --copyright="Håkon Løvdal <kode@denkule.no>" --license="CC-BY-4.0" kommune.csv
 
 kommune.json: kommune.csv
