@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Håkon Løvdal <kode@denkule.no>
+#
+# SPDX-License-Identifier: MIT
+
 # Editor configuration, see https://editorconfig.org
 root = true
 

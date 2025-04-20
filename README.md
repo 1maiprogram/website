@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2025 Håkon Løvdal <kode@denkule.no>
+
+SPDX-License-Identifier: MIT
+-->
+
 # 1maiprogram
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
