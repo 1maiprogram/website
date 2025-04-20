@@ -10,7 +10,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
     } @else {
         <ul>
             @for (link of links$ | async; track link) {
-                <li><a [href]="link.link">{{ link.description ?? 'Program' }}</a></li>
+                <li><a [href]="link.link" target="_blank" rel="noopener noreferrer">{{ link.description ?? 'Program' }}</a></li>
             }
         </ul>
         @if(noLinks$ | async) {
