@@ -11,14 +11,14 @@ fylke.csv: 1709.csv
 	iconv -f iso88591 -t utf8 1709.csv | cut -d';' -f1,4 | sed 's/ -.*/"/' > fylke.csv
 	reuse annotate --copyright="Håkon Løvdal <kode@denkule.no>" --license="CC-BY-4.0" fylke.csv
 
-fylke.json: fylke.csv
-	grep -v Uoppgitt fylke.csv | npx csvtojson --delimiter=';' | jq . > fylke.json
+fylke.json: fylke.csv svalbard.csv
+	(grep -v Uoppgitt fylke.csv; sed 1d svalbard.csv) | npx csvtojson --delimiter=';' | jq . > fylke.json
 	reuse annotate --copyright="Håkon Løvdal <kode@denkule.no>" --license="CC-BY-4.0" fylke.json
 
 kommune.csv: 1710.csv
 	iconv -f iso88591 -t utf8 1710.csv | cut -d';' -f1,4 | sed 's/ -.*/"/; s/ (.*"/"/' > kommune.csv
 	reuse annotate --copyright="Håkon Løvdal <kode@denkule.no>" --license="CC-BY-4.0" kommune.csv
 
-kommune.json: kommune.csv
-	grep -v Uoppgitt kommune.csv | npx csvtojson --delimiter=';' | jq . > kommune.json
+kommune.json: kommune.csv longyearbyen.csv
+	(grep -v Uoppgitt kommune.csv; sed 1d longyearbyen.csv) | npx csvtojson --delimiter=';' | jq . > kommune.json
 	reuse annotate --copyright="Håkon Løvdal <kode@denkule.no>" --license="CC-BY-4.0" kommune.json
