@@ -16,6 +16,11 @@ pre {
     padding: 1em;
 }
 
+.csv {
+    white-space: pre;
+    overflow-x: scroll;
+}
+
 @media (width >= 500px) {
     .content {
         border-radius: 25px;
