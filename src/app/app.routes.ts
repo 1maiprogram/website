@@ -12,6 +12,7 @@ import {
 } from "./app.routes.constants";
 import { KommuneComponent } from "./kommune/kommune/kommune.component";
 import { OppdateringComponent } from "./oppdatering/oppdatering.component";
+import { AboutComponent } from "./about/about.component";
 
 export const routes: Routes = [
     { path: '',   redirectTo: '/2025', pathMatch: 'full' },
@@ -19,4 +20,5 @@ export const routes: Routes = [
     { path: `2025/:${paramMapNameFylke}`, component: KommuneSelectorComponent },
     { path: `2025/:${paramMapNameFylke}/:${paramMapNameKommune}`, component: KommuneComponent },
     { path: 'oppdatering', component: OppdateringComponent },
+    { path: 'om', component: AboutComponent },
 ];
