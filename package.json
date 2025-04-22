@@ -40,5 +40,10 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.7.2",
     "zzzzz-last-devdependencies": "github:AngelsProgram/zzzzz-last-dependency#install"
+  },
+  "overrides": {
+    "@angular-devkit/build-angular": {
+      "http-proxy-middleware": "^3.0.5"
+    }
   }
 }
