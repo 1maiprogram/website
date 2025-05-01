@@ -6,5 +6,9 @@
 		"zzzzzzzzzzzzzzzz-last"
 	],
 	"files.trimTrailingWhitespace": true,
-	"prettier.trailingComma": "all"
+	"prettier.trailingComma": "all",
+	"[tsv]": {
+		"editor.tabSize": 8,
+		"editor.insertSpaces": false
+	}
 }
