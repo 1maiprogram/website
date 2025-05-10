@@ -25,7 +25,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Install pre-commit, reuse
+    - name: Install pre-commit, reuse, shellcheck
       uses: actions/setup-python@v2
       with:
         python-version: 3.13.3
@@ -33,6 +33,7 @@ jobs:
     - run: pre-commit --version
     - run: pip install reuse
     - run: reuse --version
+    - run: sudo apt-get install -y shellcheck
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
@@ -42,4 +43,4 @@ jobs:
     - run: ./bin/run-test-test.sh
     - run: ./bin/run-test-pre-commit.sh
     - run: ./bin/run-test-reuse-lint.sh
-    #- run: ./bin/run-test-shellcheck.sh
+    - run: ./bin/run-test-shellcheck.sh
