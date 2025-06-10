@@ -59,7 +59,10 @@ jobs:
           cp -ai test.www/.git* test.www.new/.
           cd test.www.new
           git add .
-          git commit -m "$(date "+%Y-%m-%d_%H:%M")"
+          # Git commit will return with non-zero exit code if there are no files to commit
+          # (which is not necessarily an error, for instance when a new commit is pushed
+          # that only changes this file, there will be nothing in the www directory changed).
+          if ! git diff-index --cached --quiet HEAD; then git commit -m "$(date "+%Y-%m-%d_%H:%M")"; fi
           cd ..
           mv test.www test.www."$(date "+%Y-%m-%d_%H:%M")"
           mv test.www.new test.www
