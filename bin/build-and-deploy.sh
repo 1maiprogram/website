@@ -13,6 +13,5 @@ cd "$(git rev-parse --show-toplevel)"
 
 rm -r dist
 npm run build
-find dist -name '*.license' -print0 | xargs -0 --no-run-if-empty rm
 
 scp -r dist/1maiprogram/browser "$DEPLOY_USER"@"$DEPLOY_SERVER":www.new
