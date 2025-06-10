@@ -8,7 +8,7 @@ name: Deploy
 
 on:
   push:
-    branches: [ "main", "deploy" ]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -42,7 +42,7 @@ jobs:
         passphrase: ${{ secrets.DEPLOY_PASSPHRASE }}
         source: dist/1maiprogram/browser
         target: ${{ secrets.DEPLOY_WWW_PARENT_DIR }}/upload
-    - name: Execute remote SSH commands using password
+    - name: Atomically replace old www directory with new
       uses: appleboy/ssh-action@v1
       with:
         host: ${{ secrets.DEPLOY_HOST }}
@@ -54,16 +54,16 @@ jobs:
           set -euo pipefail
           cd ${{ secrets.DEPLOY_WWW_PARENT_DIR }}
           set -xv
-          mkdir test.www.new
-          mv upload/dist/1maiprogram/browser/* upload/dist/1maiprogram/browser/.??* test.www.new/.
-          cp -ai test.www/.git* test.www.new/.
-          cd test.www.new
+          mkdir www.new
+          mv upload/dist/1maiprogram/browser/* upload/dist/1maiprogram/browser/.??* www.new/.
+          cp -ai www/.git* www.new/.
+          cd www.new
           git add .
           # Git commit will return with non-zero exit code if there are no files to commit
           # (which is not necessarily an error, for instance when a new commit is pushed
           # that only changes this file, there will be nothing in the www directory changed).
           if ! git diff-index --cached --quiet HEAD; then git commit -m "$(date "+%Y-%m-%d_%H:%M")"; fi
           cd ..
-          mv test.www test.www."$(date "+%Y-%m-%d_%H:%M")"
-          mv test.www.new test.www
-          ls -ld test.www*
+          mv www www."$(date "+%Y-%m-%d_%H:%M")"
+          mv www.new www
+          ls -ld www*
