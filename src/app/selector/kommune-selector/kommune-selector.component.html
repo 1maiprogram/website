@@ -6,5 +6,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 
 <ul>
-    <li *ngFor="let kommune of kommuner"><a [routerLink]="kommune.name">{{ kommune.name }}</a></li>
+    @for (kommune of kommuner; track kommune) {
+    <li><a [routerLink]="kommune.name">{{ kommune.name }}</a></li>
+    }
 </ul>

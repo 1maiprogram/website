@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import { Component } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import { RouterLink, RouterOutlet } from "@angular/router";
 
 import { MenuItem, MenuService } from "./menu.service";
@@ -11,7 +11,6 @@ import { MenuItem, MenuService } from "./menu.service";
 @Component({
     selector: "app-root",
     imports: [
-        CommonModule,
         RouterOutlet,
         RouterLink,
     ],

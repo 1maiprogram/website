@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import { Component, OnInit } from "@angular/core";
-import { CommonModule } from "@angular/common";
+
 import {
     ActivatedRoute,
     Router,
@@ -17,7 +17,6 @@ import { paramMapNameFylke } from "../../app.routes.constants";
 @Component({
     selector: "app-kommune-selector",
     imports: [
-        CommonModule,
         RouterLink,
     ],
     templateUrl: "./kommune-selector.component.html",

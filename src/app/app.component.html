@@ -5,22 +5,26 @@ SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
 <main class="main">
-    <h1>Finn 1. mai program for der du bor</h1>
+  <h1>Finn 1. mai program for der du bor</h1>
 
-    <div class="content">
-        <span *ngFor="let menuItem of menuItems">
-            <a class="menu-item" *ngIf="menuItem.visibleSignal()" [routerLink]="menuItem.urlSignal()">{{ menuItem.textSignal() }}</a>
-        </span>
-    </div>
+  <div class="content">
+    @for (menuItem of menuItems; track menuItem) {
+      <span>
+        @if (menuItem.visibleSignal()) {
+          <a class="menu-item" [routerLink]="menuItem.urlSignal()">{{ menuItem.textSignal() }}</a>
+        }
+      </span>
+    }
+  </div>
 
 </main>
 
 <hr>
 
-<router-outlet />
+  <router-outlet />
 
-<footer>
+  <footer>
     <p><a routerLink="/om">Om denne siden</a></p>
     <p><a routerLink="/oppdatering">Bidra med oppdateringer?</a></p>
     <p><a href="https://github.com/1maiprogram/website" target="_blank" rel="noopener noreferrer">Kildekode</a></p>
-</footer>
+  </footer>
