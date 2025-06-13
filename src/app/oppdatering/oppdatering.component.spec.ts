@@ -5,6 +5,7 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { OppdateringComponent } from "./oppdatering.component";
+import { appProviders } from "../app.config";
 
 describe("OppdateringComponent", () => {
     let component: OppdateringComponent;
@@ -14,6 +15,9 @@ describe("OppdateringComponent", () => {
         await TestBed.configureTestingModule({
             imports: [
                 OppdateringComponent,
+            ],
+            providers: [
+                ...appProviders,
             ],
         }).compileComponents();
 

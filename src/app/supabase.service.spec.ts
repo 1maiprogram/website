@@ -5,12 +5,16 @@
 import { TestBed } from "@angular/core/testing";
 
 import { SupabaseService } from "./supabase.service";
+import { appProviders } from "./app.config";
 
 describe("SupabaseService", () => {
     let service: SupabaseService;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
+            providers: [
+                ...appProviders,
+            ],
         });
         service = TestBed.inject(SupabaseService);
     });

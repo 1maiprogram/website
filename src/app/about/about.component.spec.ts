@@ -5,6 +5,7 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { AboutComponent } from "./about.component";
+import { appProviders } from "../app.config";
 
 describe("AboutComponent", () => {
     let component: AboutComponent;
@@ -14,6 +15,9 @@ describe("AboutComponent", () => {
         await TestBed.configureTestingModule({
             imports: [
                 AboutComponent,
+            ],
+            providers: [
+                ...appProviders,
             ],
         }).compileComponents();
 

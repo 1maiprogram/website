@@ -13,6 +13,7 @@ import { createSpyFromClass, Spy } from "jasmine-auto-spies";
 
 import { KommuneComponent } from "./kommune.component";
 import { MenuItem, MenuService } from "../../menu.service";
+import { appProviders } from "../../app.config";
 
 describe("KommuneComponent", () => {
     let component: KommuneComponent;
@@ -28,6 +29,7 @@ describe("KommuneComponent", () => {
                 KommuneComponent,
             ],
             providers: [
+                ...appProviders,
                 {
                     provide: ActivatedRoute,
                     useValue: {

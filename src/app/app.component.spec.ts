@@ -7,6 +7,7 @@ import { ActivatedRoute } from "@angular/router";
 import { createSpyFromClass, Spy } from "jasmine-auto-spies";
 
 import { AppComponent } from "./app.component";
+import { appProviders } from "./app.config";
 
 describe("AppComponent", () => {
     let activatedRouteSpy: Spy<ActivatedRoute>;
@@ -19,6 +20,7 @@ describe("AppComponent", () => {
                 AppComponent,
             ],
             providers: [
+                ...appProviders,
                 { provide: ActivatedRoute, useValue: activatedRouteSpy },
             ],
         }).compileComponents();

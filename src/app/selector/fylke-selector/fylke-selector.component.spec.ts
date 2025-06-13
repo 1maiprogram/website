@@ -4,9 +4,10 @@
 
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { createSpyFromClass, Spy } from 'jasmine-auto-spies';
+import { ActivatedRoute } from "@angular/router";
 
 import { FylkeSelectorComponent } from "./fylke-selector.component";
-import { ActivatedRoute } from "@angular/router";
+import { appProviders } from "../../app.config";
 
 describe("FylkeSelectorComponent", () => {
     let component: FylkeSelectorComponent;
@@ -18,6 +19,7 @@ describe("FylkeSelectorComponent", () => {
         await TestBed.configureTestingModule({
             imports: [FylkeSelectorComponent],
             providers: [
+                ...appProviders,
                 { provide: ActivatedRoute, useValue: activatedRouteSpy },
             ],
         }).compileComponents();

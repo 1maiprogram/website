@@ -8,6 +8,7 @@ import { ActivatedRoute, convertToParamMap, Router } from "@angular/router";
 
 import { KommuneSelectorComponent } from "./kommune-selector.component";
 import { Kommune, RegionService } from "../../region/region.service";
+import { appProviders } from "../../app.config";
 
 const osloKommune = new Kommune(301, 3, 'Oslo');
 
@@ -24,6 +25,7 @@ describe("KommuneSelectorComponent", () => {
         await TestBed.configureTestingModule({
             imports: [KommuneSelectorComponent],
             providers: [
+                ...appProviders,
                 {
                     provide: ActivatedRoute,
                     useValue: {
@@ -32,7 +34,6 @@ describe("KommuneSelectorComponent", () => {
                         },
                     },
                 },
-                Router, // Dependency needed by RouterLink.
                 { provide: RegionService, useValue: regionServiceSpy },
             ],
         }).compileComponents();
