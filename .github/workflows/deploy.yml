@@ -51,7 +51,6 @@ jobs:
         script: |
           set -euo pipefail
           cd ${{ secrets.DEPLOY_WWW_PARENT_DIR }}
-          set -xv
           mkdir www.new
           mv upload/dist/1maiprogram/browser/* upload/dist/1maiprogram/browser/.??* www.new/.
           cp -ai www/.git* www.new/.
@@ -64,4 +63,3 @@ jobs:
           cd ..
           mv www www."$(date "+%Y-%m-%d_%H:%M")"
           mv www.new www
-          ls -ld www*
