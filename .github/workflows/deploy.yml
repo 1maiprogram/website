@@ -28,7 +28,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
+    - run: npm clean-install
     - run: npm run build
     - name: Copy dist files to server
       uses: appleboy/scp-action@v1
