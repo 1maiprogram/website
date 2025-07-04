@@ -11,12 +11,12 @@ which is a site where it super simple to find links to
 [labour day programs](https://en.wikipedia.org/wiki/International_Workers%27_Day)
 in the kommune in Norway you live in.
 
-All links have a year attribute so you will never be given outdated information.
+All links have a year component so you will never be given outdated information.
 
 ## Technology
 
 This is a standard [Angular project](https://www.youtube.com/watch?v=Ata9cSC2WpM),
-currently using [Angular version 19](https://angular.dev/).
+currently using [Angular version 20](https://angular.dev/).
 
 The links are stored in a [Supabase Postgres database](https://supabase.com/).
 
@@ -27,7 +27,8 @@ Awesome! To create pull requests you need to
 
 For information on building see [here](./development.md).
 
-For contributing links go to the "oppdatering" page on [https://www.1maiprogram.no/](https://www.1maiprogram.no/).
+For contributing labour day programs links go to the "oppdatering" page on
+[https://www.1maiprogram.no/](https://www.1maiprogram.no/).
 
 ## License
 
