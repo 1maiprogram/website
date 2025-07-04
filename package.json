@@ -7,7 +7,8 @@
     "build": "ng build",
     "postbuild": "find dist -name '*.license' -print0 | xargs -0 --no-run-if-empty rm",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --watch=false --code-coverage"
+    "test": "ng test --watch=false --code-coverage",
+    "zzzz-last-script": ""
   },
   "private": true,
   "dependencies": {
