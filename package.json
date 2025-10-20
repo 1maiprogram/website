@@ -26,6 +26,11 @@
     "tslib": "^2.8.1",
     "zzzzz-last-dependencies": "github:AngelsProgram/zzzzz-last-dependency#install"
   },
+    "overrides": {
+    "@angular/build": {
+      "vite": "7.1.11"
+    }
+  },
   "devDependencies": {
     "@angular/build": "^20.3.6",
     "@angular/cli": "^20.3.6",
