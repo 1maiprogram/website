@@ -11,6 +11,11 @@
     "zzzz-last-script": ""
   },
   "private": true,
+  "overrides": {
+    "karma": {
+      "body-parser": "2.2.1"
+    }
+  },
   "dependencies": {
     "@angular/common": "^20.3.12",
     "@angular/compiler": "^20.3.12",
@@ -31,6 +36,7 @@
     "@angular/cli": "^20.3.10",
     "@angular/compiler-cli": "^20.3.12",
     "@types/jasmine": "~5.1.13",
+    "body-parser": "^2.2.1",
     "jasmine-auto-spies": "^8.0.1",
     "jasmine-core": "~5.12.1",
     "karma": "~6.4.4",
