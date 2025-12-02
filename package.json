@@ -12,6 +12,9 @@
   },
   "private": true,
   "overrides": {
+    "@angular/cli": {
+      "@modelcontextprotocol/sdk": "1.24.0"
+    },
     "karma": {
       "body-parser": "2.2.1"
     }
