@@ -5,6 +5,8 @@
 # This workflow will deploy to www.1maiprogram.no.
 
 name: Deploy
+permissions:
+  contents: read
 
 on:
   push:
