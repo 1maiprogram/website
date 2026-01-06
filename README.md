@@ -16,7 +16,7 @@ All links have a year component so you will never be given outdated information.
 ## Technology
 
 This is a standard [Angular project](https://www.youtube.com/watch?v=Ata9cSC2WpM),
-currently using [Angular version 20](https://angular.dev/).
+currently using [Angular version 21](https://angular.dev/).
 
 The links are stored in a [Supabase Postgres database](https://supabase.com/).
 
