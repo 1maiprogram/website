@@ -12,6 +12,9 @@
   },
   "private": true,
   "overrides": {
+    "@angular/cli": {
+      "@modelcontextprotocol/sdk": "^1.25.1"
+    },
     "karma": {
       "body-parser": "2.2.1"
     }
@@ -35,6 +38,7 @@
     "@angular/build": "^21.0.4",
     "@angular/cli": "^21.0.4",
     "@angular/compiler-cli": "^21.0.6",
+    "@modelcontextprotocol/sdk": "^1.25.1",
     "@types/jasmine": "~5.1.13",
     "body-parser": "^2.2.1",
     "jasmine-auto-spies": "^8.0.1",
