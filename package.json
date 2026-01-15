@@ -12,6 +12,9 @@
   },
   "private": true,
   "overrides": {
+    "@angular/build": {
+      "undici": "^7.18.2"
+    },
     "@angular/cli": {
       "@modelcontextprotocol/sdk": "^1.25.2"
     },
