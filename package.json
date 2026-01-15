@@ -15,9 +15,6 @@
     "@angular/build": {
       "undici": "^7.18.2"
     },
-    "@angular/cli": {
-      "@modelcontextprotocol/sdk": "^1.25.2"
-    },
     "karma": {
       "body-parser": "2.2.1"
     }
@@ -41,7 +38,6 @@
     "@angular/build": "^21.1.0",
     "@angular/cli": "^21.1.0",
     "@angular/compiler-cli": "^21.1.0",
-    "@modelcontextprotocol/sdk": "^1.25.2",
     "@types/jasmine": "~5.1.14",
     "body-parser": "^2.2.2",
     "jasmine-auto-spies": "^8.0.1",
