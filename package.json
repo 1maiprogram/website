@@ -15,6 +15,9 @@
     "@angular/build": {
       "undici": "^7.18.2"
     },
+    "@angular/cli": {
+      "@modelcontextprotocol/sdk": "^1.26.0"
+    },
     "karma": {
       "body-parser": "2.2.1"
     }
