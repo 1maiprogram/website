@@ -12,6 +12,9 @@
   },
   "private": true,
   "overrides": {
+    "@angular/cli": {
+      "ajv": "^8.18.0"
+    },
     "karma": {
       "body-parser": "2.2.1"
     }
