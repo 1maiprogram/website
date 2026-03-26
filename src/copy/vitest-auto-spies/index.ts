@@ -2,7 +2,8 @@
 // SPDX-FileCopyrightText: 2026 Julien Saguet <julien.saguet@outlook.fr>
 // SPDX-License-Identifier: MIT
 export * from './vitest-auto-spies.types';
-export { createSpyFromClass, ClassSpyConfiguration } from './create-spy-from-class';
+export type { ClassSpyConfiguration } from './create-spy-from-class';
+export { createSpyFromClass } from './create-spy-from-class';
 export { createFunctionSpy } from './create-function-spy';
 export { createObservableWithValues } from '@hirez_io/auto-spies-core';
 export * from './angular-provider-helper';
