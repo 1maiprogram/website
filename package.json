@@ -12,9 +12,6 @@
   },
   "private": true,
   "overrides": {
-    "@angular/build": {
-      "undici": "^7.24.5"
-    },
     "@angular/cli": {
       "ajv": "^8.18.0"
     },
