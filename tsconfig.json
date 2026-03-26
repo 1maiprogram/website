@@ -17,6 +17,9 @@
             "@assets/*": [
                 "./src/assets/*"
             ],
+            "@copy/*": [
+                "./src/copy/*"
+            ],
             "@shared/*": [
                 "./src/shared/*"
             ],
