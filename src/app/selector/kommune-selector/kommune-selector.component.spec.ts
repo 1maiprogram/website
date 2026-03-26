@@ -21,7 +21,7 @@ describe("KommuneSelectorComponent", () => {
     beforeEach(async () => {
         activatedRouteSpy = createSpyFromClass(ActivatedRoute);
         regionServiceSpy = createSpyFromClass(RegionService);
-        regionServiceSpy.getNoKommunerByFylke.and.returnValue([osloKommune]);
+        regionServiceSpy.getNoKommunerByFylke.mockReturnValue([osloKommune]);
         await TestBed.configureTestingModule({
             imports: [KommuneSelectorComponent],
             providers: [
