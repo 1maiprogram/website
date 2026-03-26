@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { createSpyFromClass, Spy } from 'jasmine-auto-spies';
+import { createSpyFromClass, Spy } from "@copy/vitest-auto-spies";
 import { ActivatedRoute } from "@angular/router";
 
 import { FylkeSelectorComponent } from "./fylke-selector.component";

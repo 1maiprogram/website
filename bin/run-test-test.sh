@@ -8,8 +8,4 @@ set -euo pipefail
 
 "$(dirname "$0")"/npm-install-if-needed.sh
 
-echo "Skipping tests until fully converted to vitest"
-exit 0
-# shellcheck disable=SC2317
-
 npx ng test --watch=false
