@@ -23,7 +23,7 @@ describe("KommuneComponent", () => {
     beforeEach(async () => {
         menuServiceSpy = createSpyFromClass(MenuService);
         const menuItem = new MenuItem("Oslo", "url", true);
-        menuServiceSpy.getMenuItem.and.returnValue(menuItem);
+        menuServiceSpy.getMenuItem.mockReturnValue(menuItem);
         await TestBed.configureTestingModule({
             imports: [
                 KommuneComponent,
