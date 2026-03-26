@@ -21,9 +21,6 @@
     },
     "tinyglobby@": {
       "picomatch": "^4.0.4"
-    },
-    "karma": {
-      "body-parser": "2.2.1"
     }
   },
   "dependencies": {
