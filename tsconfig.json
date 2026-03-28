@@ -3,7 +3,6 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
-        "outDir": "./dist/out-tsc",
         "strict": true,
         "noImplicitOverride": true,
         "noPropertyAccessFromIndexSignature": true,
@@ -11,26 +10,36 @@
         "noFallthroughCasesInSwitch": true,
         "skipLibCheck": true,
         "isolatedModules": true,
-        "esModuleInterop": true,
         "experimentalDecorators": true,
-        "moduleResolution": "bundler",
         "importHelpers": true,
         "resolveJsonModule": true,
         "paths": {
             "@assets/*": [
                 "./src/assets/*"
             ],
+            "@copy/*": [
+                "./src/copy/*"
+            ],
             "@shared/*": [
                 "./src/shared/*"
             ],
         },
         "target": "ES2022",
-        "module": "ES2022"
+        "module": "preserve"
     },
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
         "strictInjectionParameters": true,
         "strictInputAccessModifiers": true,
         "strictTemplates": true
-    }
+    },
+    "files": [],
+    "references": [
+        {
+            "path": "./tsconfig.app.json"
+        },
+        {
+            "path": "./tsconfig.spec.json"
+        }
+    ]
 }

@@ -9,7 +9,7 @@ import {
     convertToParamMap,
     UrlSegment,
 } from "@angular/router";
-import { createSpyFromClass, Spy } from "jasmine-auto-spies";
+import { createSpyFromClass, Spy } from "@copy/vitest-auto-spies";
 
 import { KommuneComponent } from "./kommune.component";
 import { MenuItem, MenuService } from "../../menu.service";
@@ -23,7 +23,7 @@ describe("KommuneComponent", () => {
     beforeEach(async () => {
         menuServiceSpy = createSpyFromClass(MenuService);
         const menuItem = new MenuItem("Oslo", "url", true);
-        menuServiceSpy.getMenuItem.and.returnValue(menuItem);
+        menuServiceSpy.getMenuItem.mockReturnValue(menuItem);
         await TestBed.configureTestingModule({
             imports: [
                 KommuneComponent,

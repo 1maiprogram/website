@@ -2,12 +2,17 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { ApplicationConfig, provideZonelessChangeDetection } from "@angular/core";
+import {
+    ApplicationConfig,
+    provideBrowserGlobalErrorListeners,
+    provideZonelessChangeDetection,
+} from "@angular/core";
 import { provideRouter } from "@angular/router";
 
 import { routes } from "./app.routes";
 
 export const appProviders = [
+    provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
 ];

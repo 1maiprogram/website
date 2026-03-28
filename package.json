@@ -7,10 +7,11 @@
     "build": "ng build",
     "postbuild": "find dist -name '*.license' -print0 | xargs -0 --no-run-if-empty rm",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --watch=false --code-coverage",
+    "test": "ng test --watch=false",
     "zzzz-last-script": ""
   },
   "private": true,
+  "packageManager": "npm@10.9.4",
   "overrides": {
     "@angular-devkit/core": {
       "picomatch": "^4.0.4"
@@ -20,9 +21,6 @@
     },
     "tinyglobby@": {
       "picomatch": "^4.0.4"
-    },
-    "karma": {
-      "body-parser": "2.2.1"
     }
   },
   "dependencies": {
@@ -44,17 +42,11 @@
     "@angular/build": "^21.2.4",
     "@angular/cli": "^21.2.4",
     "@angular/compiler-cli": "^21.2.6",
-    "@types/jasmine": "~5.1.15",
-    "body-parser": "^2.2.2",
-    "jasmine-auto-spies": "^8.0.1",
-    "jasmine-core": "~5.13.0",
-    "karma": "~6.4.4",
-    "karma-chrome-launcher": "~3.2.0",
-    "karma-coverage": "~2.2.1",
-    "karma-firefox-launcher": "^2.1.3",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.2.0",
+    "@hirez_io/auto-spies-core": "^3.0.0",
+    "jsdom": "^28.0.0",
+    "prettier": "^3.8.1",
     "typescript": "~5.9.3",
+    "vitest": "^4.0.8",
     "zzzzz-last-devdependencies": "github:AngelsProgram/zzzzz-last-dependency#install"
   }
 }

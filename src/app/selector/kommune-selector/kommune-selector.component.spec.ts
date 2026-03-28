@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { createSpyFromClass, Spy } from "jasmine-auto-spies";
+import { createSpyFromClass, Spy } from "@copy/vitest-auto-spies";
 import { ActivatedRoute, convertToParamMap, Router } from "@angular/router";
 
 import { KommuneSelectorComponent } from "./kommune-selector.component";
@@ -21,7 +21,7 @@ describe("KommuneSelectorComponent", () => {
     beforeEach(async () => {
         activatedRouteSpy = createSpyFromClass(ActivatedRoute);
         regionServiceSpy = createSpyFromClass(RegionService);
-        regionServiceSpy.getNoKommunerByFylke.and.returnValue([osloKommune]);
+        regionServiceSpy.getNoKommunerByFylke.mockReturnValue([osloKommune]);
         await TestBed.configureTestingModule({
             imports: [KommuneSelectorComponent],
             providers: [
