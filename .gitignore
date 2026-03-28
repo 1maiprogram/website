@@ -34,6 +34,8 @@ yarn-error.log
 !.vscode/launch.json.license
 !.vscode/extensions.json
 !.vscode/extensions.json.license
+!.vscode/mcp.json
+!.vscode/mcp.json.license
 .history/*
 
 # Miscellaneous
@@ -44,8 +46,8 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+__screenshots__/
 
 # System files
 .DS_Store
 Thumbs.db
-.env.deploy
