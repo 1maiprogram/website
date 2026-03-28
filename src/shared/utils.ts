@@ -2,8 +2,11 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { AaModes, sortDaCmp } from "../lib/mit/sortda";
+const collator = new Intl.Collator('no', {
+  numeric: true,
+  sensitivity: 'base',
+});
 
 export function nameSortFunction<T extends { name: string }>(a: T, b: T) {
-    return sortDaCmp(a.name, b.name, AaModes.FIRST);
+    return collator.compare(a.name, b.name);
 }
