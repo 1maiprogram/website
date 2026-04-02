@@ -7,20 +7,22 @@ import { ActivatedRoute } from "@angular/router";
 import { createSpyFromClass, Spy } from "@copy/vitest-auto-spies";
 
 import { AppComponent } from "./app.component";
-import { appProviders } from "./app.config";
+import { MenuService } from "./menu.service";
 
 describe("AppComponent", () => {
     let activatedRouteSpy: Spy<ActivatedRoute>;
+    let menuServiceSpy: Spy<MenuService>;
 
     beforeEach(async () => {
         activatedRouteSpy = createSpyFromClass(ActivatedRoute);
+        menuServiceSpy = createSpyFromClass(MenuService);
 
         await TestBed.configureTestingModule({
             imports: [
                 AppComponent,
             ],
             providers: [
-                ...appProviders,
+                { provide: MenuService, useValue: menuServiceSpy },
                 { provide: ActivatedRoute, useValue: activatedRouteSpy },
             ],
         }).compileComponents();
