@@ -2,11 +2,11 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { YearSelectorComponent } from './year-selector.component';
+import { YearSelectorComponent } from "./year-selector.component";
 
-describe('YearSelectorComponent', () => {
+describe("YearSelectorComponent", () => {
     let component: YearSelectorComponent;
     let fixture: ComponentFixture<YearSelectorComponent>;
 
@@ -20,7 +20,7 @@ describe('YearSelectorComponent', () => {
         await fixture.whenStable();
     });
 
-    it('should create', () => {
+    it("should create", () => {
         expect(component).toBeTruthy();
     });
 });
