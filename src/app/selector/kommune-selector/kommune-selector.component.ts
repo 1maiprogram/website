@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Håkon Løvdal <kode@denkule.no>
+// SPDX-FileCopyrightText: 2025,2026 Håkon Løvdal <kode@denkule.no>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -12,7 +12,7 @@ import {
 
 import { Kommune, RegionService } from "../../region/region.service";
 import { MenuService } from "../../menu.service";
-import { paramMapNameFylke } from "../../app.routes.constants";
+import { paramMapNameYear, paramMapNameFylke } from "../../app.routes.constants";
 
 @Component({
     selector: "app-kommune-selector",
@@ -35,13 +35,18 @@ export class KommuneSelectorComponent implements OnInit {
     }
 
     ngOnInit() {
+        const year = this.route.snapshot.paramMap.get(paramMapNameYear);
+        if (!year) {
+            console.error(`Invalid year value: ${year}`);
+            return;
+        }
         const fylke = this.route.snapshot.paramMap.get(paramMapNameFylke);
         if (!fylke) {
             console.error(`Invalid fylke value: ${fylke}`);
             return;
         }
         const mi = this.menuService.getMenuItem("KommuneSelector");
-        mi.urlSignal.set(`2025/${fylke}`);
+        mi.urlSignal.set(`${year}/${fylke}`);
         this.kommuner = this.regionService.getNoKommunerByFylke(fylke);
         if (this.kommuner.length === 0) {
             console.error(`No kommuner found for fylke ${fylke}`);
