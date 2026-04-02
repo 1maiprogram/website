@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Håkon Løvdal <kode@denkule.no>
+// SPDX-FileCopyrightText: 2025,2026 Håkon Løvdal <kode@denkule.no>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
@@ -7,5 +7,6 @@
 // while app.routes.ts includes the component file. This putting them here in
 // a separate file.
 
+export const paramMapNameYear: string = "year";
 export const paramMapNameFylke: string = "fylke";
 export const paramMapNameKommune: string = "kommune";

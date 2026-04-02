@@ -1,10 +1,12 @@
-// SPDX-FileCopyrightText: 2025 Håkon Løvdal <kode@denkule.no>
+// SPDX-FileCopyrightText: 2025,2026 Håkon Løvdal <kode@denkule.no>
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import { Injectable, signal, WritableSignal } from "@angular/core";
+import { yearSelectorRoutePath } from "./app.routes";
 
 export const MenuItemKeyObj = {
+    YearSelector: "YearSelector",
     FylkeSelector: "FylkeSelector",
     KommuneSelector: "KommuneSelector",
     Kommune: "Kommune",
@@ -33,17 +35,24 @@ export class MenuItem {
 })
 export class MenuService {
     private menuItemsMap = new Map<string, MenuItem>();
-    private fylkeSelectorMenuItem = new MenuItem("Velg fylke", "2025", true);
+    private yearSelectorMenuItem = new MenuItem("Velg år", yearSelectorRoutePath, true);
+    private fylkeSelectorMenuItem = new MenuItem("Velg fylke", "this initial value is not used", true);
     private kommuneSelectorMenuItem = new MenuItem("Velg kommune", "", false);
     private kommuneMenuItem = new MenuItem("", "", false);
 
     constructor(
     ) {
+        this.yearSelectorMenuItem.child = this.fylkeSelectorMenuItem;
+
         this.fylkeSelectorMenuItem.child = this.kommuneSelectorMenuItem;
+        this.fylkeSelectorMenuItem.parent = this.yearSelectorMenuItem;
+
         this.kommuneSelectorMenuItem.parent = this.fylkeSelectorMenuItem;
         this.kommuneSelectorMenuItem.child = this.kommuneMenuItem;
+
         this.kommuneMenuItem.parent = this.kommuneSelectorMenuItem;
 
+        this.menuItemsMap.set(MenuItemKeyObj.YearSelector, this.yearSelectorMenuItem);
         this.menuItemsMap.set(MenuItemKeyObj.FylkeSelector, this.fylkeSelectorMenuItem);
         this.menuItemsMap.set(MenuItemKeyObj.KommuneSelector, this.kommuneSelectorMenuItem);
         this.menuItemsMap.set(MenuItemKeyObj.Kommune, this.kommuneMenuItem);
@@ -51,6 +60,7 @@ export class MenuService {
 
     getMenuItems(): MenuItem[] {
         return [
+            this.yearSelectorMenuItem,
             this.fylkeSelectorMenuItem,
             this.kommuneSelectorMenuItem,
             this.kommuneMenuItem,

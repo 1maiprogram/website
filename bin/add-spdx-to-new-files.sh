@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-git show --oneline --name-only \
+git show --oneline --name-only "$@" \
 	| sed 1d \
 	| tr '\012' '\000' \
 	| xargs -0 grep --null -L SPDX-License-Identifier \
