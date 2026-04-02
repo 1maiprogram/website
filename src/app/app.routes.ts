@@ -19,10 +19,10 @@ import { AboutComponent } from "./about/about.component";
 export const yearSelectorRoutePath = "år";
 
 export const routes: Routes = [
-    { path: '', redirectTo: "/2026", pathMatch: "full" },
+    { path: "", redirectTo: "/2026", pathMatch: "full" },
     { path: yearSelectorRoutePath, component: YearSelectorComponent },
-    { path: 'oppdatering', component: OppdateringComponent },
-    { path: 'om', component: AboutComponent },
+    { path: "oppdatering", component: OppdateringComponent },
+    { path: "om", component: AboutComponent },
 
     // NB! These routes with :${paramMapNameYear} must be last, otherwise they
     // will match before the more specific routes above.

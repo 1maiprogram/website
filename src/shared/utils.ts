@@ -2,9 +2,9 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-const collator = new Intl.Collator('no', {
-  numeric: true,
-  sensitivity: 'base',
+const collator = new Intl.Collator("no", {
+    numeric: true,
+    sensitivity: "base",
 });
 
 export function nameSortFunction<T extends { name: string }>(a: T, b: T) {

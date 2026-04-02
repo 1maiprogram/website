@@ -10,7 +10,7 @@ import { KommuneSelectorComponent } from "./kommune-selector.component";
 import { Kommune, RegionService } from "../../region/region.service";
 import { MenuItem, MenuService } from "../../menu.service";
 
-const osloKommune = new Kommune(301, 3, 'Oslo');
+const osloKommune = new Kommune(301, 3, "Oslo");
 
 describe("KommuneSelectorComponent", () => {
     let component: KommuneSelectorComponent;

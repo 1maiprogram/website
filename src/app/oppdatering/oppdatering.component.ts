@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import { Component } from "@angular/core";
-import { NgxBackButtonDirective } from 'ngx-back-button'
+import { NgxBackButtonDirective } from "ngx-back-button"
 
 import { MenuService } from "../menu.service";
 
