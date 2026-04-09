@@ -36,7 +36,10 @@ describe("KommuneSelectorComponent", () => {
                     provide: ActivatedRoute,
                     useValue: {
                         snapshot: {
-                            paramMap: convertToParamMap({ fylke: "Oslo" }),
+                            paramMap: convertToParamMap({
+                                year: "2025",
+                                fylke: "Oslo",
+                            }),
                         },
                     },
                 },

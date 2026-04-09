@@ -4,7 +4,7 @@
 
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { createSpyFromClass, Spy } from "@copy/vitest-auto-spies";
-import { ActivatedRoute, convertToParamMap, Router, UrlSegment } from "@angular/router";
+import { ActivatedRoute, convertToParamMap, NavigationEnd, Router, UrlSegment } from "@angular/router";
 
 import { FylkeSelectorComponent } from "./fylke-selector.component";
 import { RegionService } from "../../region/region.service";
@@ -19,7 +19,12 @@ describe("FylkeSelectorComponent", () => {
 
     beforeEach(async () => {
         regionServiceSpy = createSpyFromClass(RegionService);
-        routerSpy = createSpyFromClass(Router);
+
+        routerSpy = createSpyFromClass(Router, {
+            observablePropsToSpyOn: ['events']
+        });
+        routerSpy.events.nextWith(new NavigationEnd(0, "/2026", "/2026"));
+
         menuServiceSpy = createSpyFromClass(MenuService);
         menuServiceSpy.getMenuItem.mockReturnValue(new MenuItem("FylkeSelector", "", true));
         await TestBed.configureTestingModule({
@@ -33,6 +38,7 @@ describe("FylkeSelectorComponent", () => {
                     useValue: {
                         snapshot: {
                             paramMap: convertToParamMap({
+                                year: "2025",
                                 fylke: "Oslo",
                                 kommune: "Oslo",
                             }),

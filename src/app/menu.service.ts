@@ -3,6 +3,13 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import { Injectable, signal, WritableSignal } from "@angular/core";
+import { NavigationEnd, Router } from "@angular/router";
+import {
+    filter,
+    map,
+} from "rxjs";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+
 import { yearSelectorRoutePath } from "./app.routes";
 
 export const MenuItemKeyObj = {
@@ -41,8 +48,20 @@ export class MenuService {
     private kommuneMenuItem = new MenuItem("", "", false);
 
     constructor(
+        private router: Router,
     ) {
         this.yearSelectorMenuItem.child = this.fylkeSelectorMenuItem;
+
+        this.router.events
+            .pipe(
+                filter(event => event instanceof NavigationEnd),
+                map(event => event.url),
+                takeUntilDestroyed(),
+            )
+            .subscribe(url => { // e.g. " /2026" or "/2026/Agder" etc
+                const year = url.split("/")[1];
+                this.fylkeSelectorMenuItem.urlSignal.set(year);
+            });
 
         this.fylkeSelectorMenuItem.child = this.kommuneSelectorMenuItem;
         this.fylkeSelectorMenuItem.parent = this.yearSelectorMenuItem;
