@@ -4,7 +4,7 @@
 
 import { Routes } from "@angular/router";
 
-import { YearSelectorComponent } from "./selector/year-selector/year-selector.component";
+import { currentYear, YearSelectorComponent } from "./selector/year-selector/year-selector.component";
 import { FylkeSelectorComponent } from "./selector/fylke-selector/fylke-selector.component";
 import { KommuneSelectorComponent } from "./selector/kommune-selector/kommune-selector.component";
 import {
@@ -19,7 +19,7 @@ import { AboutComponent } from "./about/about.component";
 export const yearSelectorRoutePath = "år";
 
 export const routes: Routes = [
-    { path: "", redirectTo: "/2026", pathMatch: "full" },
+    { path: "", redirectTo: `/${currentYear}`, pathMatch: "full" },
     { path: yearSelectorRoutePath, component: YearSelectorComponent },
     { path: "oppdatering", component: OppdateringComponent },
     { path: "om", component: AboutComponent },

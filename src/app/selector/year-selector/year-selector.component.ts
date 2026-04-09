@@ -3,9 +3,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import { Component } from "@angular/core";
-import { Router, RouterLink } from "@angular/router";
+import { RouterLink } from "@angular/router";
 
 import { MenuService } from "../../menu.service";
+
+export const currentYear = 2026;
 
 @Component({
     selector: "app-year-selector",
