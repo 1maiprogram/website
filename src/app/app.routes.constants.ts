@@ -7,6 +7,6 @@
 // while app.routes.ts includes the component file. This putting them here in
 // a separate file.
 
-export const paramMapNameYear: string = "year";
-export const paramMapNameFylke: string = "fylke";
-export const paramMapNameKommune: string = "kommune";
+export const paramMapNameYear = "year" as const;
+export const paramMapNameFylke = "fylke" as const;
+export const paramMapNameKommune = "kommune" as const;
