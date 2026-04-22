@@ -10,3 +10,5 @@
 export const paramMapNameYear = "year" as const;
 export const paramMapNameFylke = "fylke" as const;
 export const paramMapNameKommune = "kommune" as const;
+
+export const yearSelectorRoutePath = "år";

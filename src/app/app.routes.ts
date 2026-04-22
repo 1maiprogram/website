@@ -11,12 +11,11 @@ import {
     paramMapNameFylke,
     paramMapNameKommune,
     paramMapNameYear,
+    yearSelectorRoutePath,
 } from "./app.routes.constants";
 import { KommuneComponent } from "./kommune/kommune/kommune.component";
 import { OppdateringComponent } from "./oppdatering/oppdatering.component";
 import { AboutComponent } from "./about/about.component";
-
-export const yearSelectorRoutePath = "år";
 
 export const routes: Routes = [
     { path: "", redirectTo: `/${currentYear}`, pathMatch: "full" },

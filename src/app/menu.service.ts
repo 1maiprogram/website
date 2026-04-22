@@ -10,7 +10,7 @@ import {
 } from "rxjs";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 
-import { yearSelectorRoutePath } from "./app.routes";
+import { yearSelectorRoutePath } from "./app.routes.constants";
 
 export const MenuItemKeyObj = {
     YearSelector: "YearSelector",
