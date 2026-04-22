@@ -1,7 +1,7 @@
 // Copied from https://github.com/jsaguet/auto-spies/tree/feat/vitest-auto-spies/packages/vitest-auto-spies/src
 // SPDX-FileCopyrightText: 2026 Julien Saguet <julien.saguet@outlook.fr>
 // SPDX-License-Identifier: MIT
-import { AddSpyMethodsByReturnTypes } from '.';
+import { AddSpyMethodsByReturnTypes } from './vitest-auto-spies.types';
 import { CalledWithObject, createFunctionAutoSpy, Func } from '@hirez_io/auto-spies-core';
 import { vi } from 'vitest';
 
