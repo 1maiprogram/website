@@ -8,7 +8,7 @@
     "postbuild": "find dist -name '*.license' -print0 | xargs -0 --no-run-if-empty rm",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false",
-    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org 1maiprogram --project javascript-angular ./dist && sentry-cli sourcemaps upload --org 1maiprogram --project javascript-angular ./dist",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org 1maiprogram --project website ./dist && sentry-cli sourcemaps upload --org 1maiprogram --project website ./dist",
     "zzzz-last-script": ""
   },
   "private": true,
