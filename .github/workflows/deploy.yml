@@ -31,6 +31,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm clean-install
+    - run: |
+        echo "[auth]" > .sentryclirc
+        echo "token=${{ secrets.SENTRY_AUTH_TOKEN }}" >> .sentryclirc
     - run: npm run build
     - name: Copy dist files to server
       uses: appleboy/scp-action@v1
