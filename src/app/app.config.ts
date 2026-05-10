@@ -14,7 +14,7 @@ import { provideTransloco } from "@jsverse/transloco";
 
 import { routes } from "./app.routes";
 import { TranslocoHttpLoader } from "./transloco-loader";
-import { availableLangs } from "./available-langs";
+import { availableLangs, defaultLang } from "./available-langs";
 
 export const appProviders = [
     provideBrowserGlobalErrorListeners(),
@@ -24,7 +24,7 @@ export const appProviders = [
     provideTransloco({
         config: {
             availableLangs: availableLangs,
-            defaultLang: "no_NB",
+            defaultLang: defaultLang,
             reRenderOnLangChange: true,
             prodMode: !isDevMode(),
         },

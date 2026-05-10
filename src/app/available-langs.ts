@@ -2,9 +2,20 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-export const availableLangs = [
-    "en_GB", // English (United Kingdom)
-    "no_NB", // Norwegian bokmål
-    "no_NN", // Norwegian nynorsk
-    "no_SE", // Norwegian nordsamisk, davvisámegiella
+export type SupportedLanuages = "no_NB" | "no_NN" | "no_SE" | "en_GB";
+
+export interface Language {
+    iso639_1code: SupportedLanuages;
+    displayName: string;
+}
+
+export const defaultLang = "no_NB";
+
+export const languages: Language[] = [
+    { iso639_1code: "no_NB", displayName: "Norsk, bokmål" },
+    { iso639_1code: "no_NN", displayName: "Norsk, nynorsk" },
+    { iso639_1code: "no_SE", displayName: "Davvisámegiella (Nordsamisk)" },
+    { iso639_1code: "en_GB", displayName: "English" },
 ];
+
+export const availableLangs = languages.map((lang) => lang.iso639_1code);
