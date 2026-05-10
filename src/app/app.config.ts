@@ -4,36 +4,34 @@
 
 import {
     ApplicationConfig,
+    isDevMode,
     provideBrowserGlobalErrorListeners,
     provideZonelessChangeDetection,
-    isDevMode,
 } from "@angular/core";
 import { provideRouter } from "@angular/router";
+import { provideHttpClient } from "@angular/common/http";
+import { provideTransloco } from "@jsverse/transloco";
 
 import { routes } from "./app.routes";
-import { provideHttpClient } from "@angular/common/http";
 import { TranslocoHttpLoader } from "./transloco-loader";
-import { provideTransloco } from "@jsverse/transloco";
+import { availableLangs } from "./available-langs";
 
 export const appProviders = [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
+    provideHttpClient(),
+    provideTransloco({
+        config: {
+            availableLangs: availableLangs,
+            defaultLang: "no_NB",
+            reRenderOnLangChange: true,
+            prodMode: !isDevMode(),
+        },
+        loader: TranslocoHttpLoader,
+    }),
 ];
 
 export const appConfig: ApplicationConfig = {
     providers: appProviders,
-    providers: [
-        provideHttpClient(),
-        provideTransloco({
-            config: {
-                availableLangs: ["en", "no"],
-                defaultLang: "en",
-                // Remove this option if your application doesn't support changing language in runtime.
-                reRenderOnLangChange: true,
-                prodMode: !isDevMode(),
-            },
-            loader: TranslocoHttpLoader,
-        }),
-    ],
 };

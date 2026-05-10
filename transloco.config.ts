@@ -4,9 +4,11 @@
 
 import { TranslocoGlobalConfig } from "@jsverse/transloco-utils";
 
+import { availableLangs } from "./src/app/available-langs";
+
 const config: TranslocoGlobalConfig = {
     rootTranslationsPath: "public/i18n/",
-    langs: ["en", "no"],
+    langs: availableLangs,
     keysManager: {},
 };
 

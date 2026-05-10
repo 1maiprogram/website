@@ -23,6 +23,9 @@
             "@shared/*": [
                 "./src/shared/*"
             ],
+            "@public/*": [
+                "./public/*"
+            ],
         },
         "target": "ES2022",
         "module": "preserve"
