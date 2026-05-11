@@ -4,4 +4,15 @@ SPDX-FileCopyrightText: 2026 Håkon Løvdal <kode@denkule.no>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
-<p>language-selector works!</p>
+<span class="content">
+    Velg språk:
+    <select [value]="selectedLanguage" (change)="onLanguageChange($event)">
+        @for (lang of languages; track lang.iso639_1code) {
+            @if (lang.iso639_1code === selectedLanguage) {
+                <option [value]="lang.iso639_1code" selected>&#9989;<!-- Green heavy check mark, https://www.htmlsymbols.xyz/unicode/U%2b2705 --> {{ lang.displayName }}</option>
+            } @else {
+                <option [value]="lang.iso639_1code">{{ lang.displayName }}</option>
+            }
+        }
+    </select>
+</span>

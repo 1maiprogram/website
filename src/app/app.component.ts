@@ -5,14 +5,18 @@
 import { Component } from "@angular/core";
 
 import { RouterLink, RouterOutlet } from "@angular/router";
+import { TranslocoModule, TranslocoService } from "@jsverse/transloco";
 
 import { MenuItem, MenuService } from "./menu.service";
+import { LanguageSelectorComponent } from "./selector/language-selector/language-selector.component";
 
 @Component({
     selector: "app-root",
     imports: [
         RouterOutlet,
         RouterLink,
+        LanguageSelectorComponent,
+        TranslocoModule,
     ],
     templateUrl: "./app.component.html",
     styleUrl: "./app.component.scss",
@@ -22,6 +26,7 @@ export class AppComponent {
 
     constructor(
         menuService: MenuService,
+        private translocoService: TranslocoService,
     ) {
         this.menuItems = menuService.getMenuItems();
     }
