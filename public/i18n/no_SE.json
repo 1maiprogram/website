@@ -20,5 +20,10 @@
     },
     "main": {
         "title": "Finn 1. mai program for der du bor"
+    },
+    "menu_service": {
+        "select_year": "Velg år",
+        "select_fylke": "Velg fylke",
+        "select_kommune": "Velg kommune"
     }
 }

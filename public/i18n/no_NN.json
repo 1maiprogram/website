@@ -20,5 +20,10 @@
     },
     "main": {
         "title": "Finn 1. mai program for der du bur"
+    },
+    "menu_service": {
+        "select_year": "Velj år",
+        "select_fylke": "Velj fylke",
+        "select_kommune": "Velj kommune"
     }
 }
