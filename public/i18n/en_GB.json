@@ -1,4 +1,10 @@
 {
+    "about": {
+        "paragraph1": "Have you thought about maybe joining the 1st of May parade and wondering when it starts?",
+        "paragraph2": "But when you search on the internet you find either no references or just old programs for previous years?",
+        "paragraph3": "With this website you never have to doubt anymore and can always find the current year's program directly.",
+        "back_button": "Back"
+    },
     "language_selector": {
         "select_language": "Select language"
     }

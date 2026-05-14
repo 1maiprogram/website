@@ -4,13 +4,14 @@
 
 import { Component } from "@angular/core";
 import { NgxBackButtonDirective } from "ngx-back-button";
+import { TranslocoModule } from "@jsverse/transloco";
 
 import { MenuService } from "../menu.service";
-
 @Component({
     selector: "app-about",
     imports: [
         NgxBackButtonDirective,
+        TranslocoModule,
     ],
     templateUrl: "./about.component.html",
     styleUrl: "./about.component.scss",

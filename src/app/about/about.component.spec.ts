@@ -8,6 +8,7 @@ import { createSpyFromClass } from "@copy/vitest-auto-spies/create-spy-from-clas
 
 import { AboutComponent } from "./about.component";
 import { MenuService } from "../menu.service";
+import { getTranslocoModule } from "../transloco-testing.module";
 
 describe("AboutComponent", () => {
     let component: AboutComponent;
@@ -19,6 +20,7 @@ describe("AboutComponent", () => {
         await TestBed.configureTestingModule({
             imports: [
                 AboutComponent,
+                getTranslocoModule({}),
             ],
             providers: [
                 { provide: MenuService, useValue: menuServiceSpy },

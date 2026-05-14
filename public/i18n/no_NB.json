@@ -1,4 +1,10 @@
 {
+    "about": {
+        "paragraph1": "Har du tenkt å kanskje bli med å gå i 1. maitog og så lurer du på når det starter?",
+        "paragraph2": "Men når du søker på intenett så finner du enten ingen referanser eller så er det bare gamle program for tidligere år?",
+        "paragraph3": "Med denne websiden trenger du aldri å være i tvil lenger og kan alltid finne årets program direkte.",
+        "back_button": "Tilbake"
+    },
     "language_selector": {
         "select_language": "Velg språk"
     }
