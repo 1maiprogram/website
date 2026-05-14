@@ -25,5 +25,19 @@
         "select_year": "Select year",
         "select_fylke": "Select county",
         "select_kommune": "Select municipality"
+    },
+    "updates": {
+        "example": "Example",
+        "email_line1": "Subject: 1st of May program link for Minby",
+        "email_line2": "Description: Minby municipality's program",
+        "email_line3": "Best regards",
+        "paragraph1a": "You can send email with updates to",
+        "paragraph1b": "which contains",
+        "paragraph1c": "as well as a very short description/text for the link.",
+        "paragraph2": "To filter out spam, make sure to include the word \"skomakermelk\" somewhere in the text, all emails that do not do this will be automatically deleted.",
+        "paragraph3": "NB, do not send in links to Facebook or X (previous Twitter). They will under absolutely no circumstances be used!",
+        "paragraph4a": "If you send in multiple links at once, you can best use",
+        "paragraph4b": "either as text in the email or as an attached file (remember to still include \"skomakermelk\" in the email text).",
+        "back_button": "Back"
     }
 }

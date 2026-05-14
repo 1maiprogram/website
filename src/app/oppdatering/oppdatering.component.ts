@@ -4,6 +4,7 @@
 
 import { Component } from "@angular/core";
 import { NgxBackButtonDirective } from "ngx-back-button"
+import { TranslocoModule } from "@jsverse/transloco";
 
 import { MenuService } from "../menu.service";
 
@@ -11,6 +12,7 @@ import { MenuService } from "../menu.service";
     selector: "app-oppdatering",
     imports: [
         NgxBackButtonDirective,
+        TranslocoModule,
     ],
     templateUrl: "./oppdatering.component.html",
     styleUrl: "./oppdatering.component.scss",
