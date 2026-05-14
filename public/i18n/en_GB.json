@@ -12,5 +12,8 @@
     },
     "language_selector": {
         "select_language": "Select language"
+    },
+    "main": {
+        "title": "Find the 1st of May program for your area"
     }
 }

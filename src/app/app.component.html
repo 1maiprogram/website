@@ -4,8 +4,9 @@ SPDX-FileCopyrightText: 2025 Håkon Løvdal <kode@denkule.no>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
+<ng-container *transloco="let t; prefix: 'main'">
 <main class="main">
-  <h1>Finn 1. mai program for der du bor</h1>
+  <h1>{{ t('title') }}</h1>
 
   <div class="content">
     @for (menuItem of menuItems; track menuItem) {
@@ -18,6 +19,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
   </div>
 
 </main>
+</ng-container>
 
 <hr>
 
