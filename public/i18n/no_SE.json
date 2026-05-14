@@ -10,6 +10,11 @@
         "contributing": "Bidra med oppdateringer?",
         "source_code": "Kildekode"
     },
+    "kommune": {
+        "contribute": "Kan du bidra?",
+        "missing": "Dessverre manglar informasjon for denne kommunen.",
+        "program": "Program"
+    },
     "language_selector": {
         "select_language": "Velg språk"
     },

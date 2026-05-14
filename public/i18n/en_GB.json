@@ -10,6 +10,11 @@
         "contributing": "Contributing updates?",
         "source_code": "Source code"
     },
+    "kommune": {
+        "contribute": "Can you contribute?",
+        "missing": "Unfortunately, information for this municipality is missing.",
+        "program": "Program"
+    },
     "language_selector": {
         "select_language": "Select language"
     },
