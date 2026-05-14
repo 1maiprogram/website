@@ -9,6 +9,7 @@ import {
     map,
 } from "rxjs";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { TranslocoService } from "@jsverse/transloco";
 
 import { yearSelectorRoutePath } from "./app.routes.constants";
 
@@ -49,7 +50,20 @@ export class MenuService {
 
     constructor(
         private router: Router,
+        private translocoService: TranslocoService
     ) {
+        this.translocoService.selectTranslate("menu_service.select_year")
+            .pipe(takeUntilDestroyed())
+            .subscribe(value => this.yearSelectorMenuItem.textSignal.set(value));
+
+        this.translocoService.selectTranslate("menu_service.select_fylke")
+            .pipe(takeUntilDestroyed())
+            .subscribe(value => this.fylkeSelectorMenuItem.textSignal.set(value));
+
+        this.translocoService.selectTranslate("menu_service.select_kommune")
+            .pipe(takeUntilDestroyed())
+            .subscribe(value => this.kommuneSelectorMenuItem.textSignal.set(value));
+
         this.yearSelectorMenuItem.child = this.fylkeSelectorMenuItem;
 
         this.router.events

@@ -1,0 +1,43 @@
+{
+    "about": {
+        "paragraph1": "Har du tenkt å kanskje bli med å gå i 1. maitog og så lurar du på når det startar?",
+        "paragraph2": "Men når du søkar på intenett så finnar du anten ingen referanser eller så er det berre gamle program for tidlegare år?",
+        "paragraph3": "Med denne websida treng du aldri å være i tvil lenger og kan alltid finne årets program direkte.",
+        "back_button": "Tilbake"
+    },
+    "footer": {
+        "about": "Om denne sida",
+        "contributing": "Hjelpe til med oppdateringar?",
+        "source_code": "Kjeldekode"
+    },
+    "kommune": {
+        "contribute": "Kan du bidra?",
+        "missing": "Dessverre manglar informasjon for denne kommunen.",
+        "program": "Program"
+    },
+    "language_selector": {
+        "select_language": "Velj språk"
+    },
+    "main": {
+        "title": "Finn 1. mai program for der du bur"
+    },
+    "menu_service": {
+        "select_year": "Velj år",
+        "select_fylke": "Velj fylke",
+        "select_kommune": "Velj kommune"
+    },
+    "updates": {
+        "example": "Eksempel",
+        "email_line1": "Subject/emne: 1. mai link til Minby",
+        "email_line2": "Tittel: Minby kommunes program",
+        "email_line3": "Helsing",
+        "paragraph1a": "Du kan senda epost med oppdateringar til",
+        "paragraph1b": "som inneheld",
+        "paragraph1c": "samt ein veldig kort tittel til lenkja.",
+        "paragraph2": "For å filtere vekk spam, pass på å ha med ordet \"skomakermelk\" ein eller annan plass i teksta, alle epostar som ikkje gjer det vert sletta automatisk.",
+        "paragraph3": "NB, ikkje send inn lenkjar til noko på Facebook eller X (tidlegere Twitter). Dei vil under absolutt inga høve verte brukt!",
+        "paragraph4a": "Hvis du sendar inn fleire på ei gang kan du helst bruke",
+        "paragraph4b": "anten som tekst i eposten eller som ei vedlagt fil (husk å framleis få med \"skomakermelk\" i epostteksta).",
+        "back_button": "Tilbake"
+    }
+}

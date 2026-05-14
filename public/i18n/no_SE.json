@@ -1,0 +1,43 @@
+{
+    "about": {
+        "paragraph1": "Har du tenkt å kanskje bli med å gå i 1. maitog og så lurer du på når det starter?",
+        "paragraph2": "Men når du søker på intenett så finner du enten ingen referanser eller så er det bare gamle program for tidligere år?",
+        "paragraph3": "Med denne websiden trenger du aldri å være i tvil lenger og kan alltid finne årets program direkte.",
+        "back_button": "Tilbake"
+    },
+    "footer": {
+        "about": "Om denne siden",
+        "contributing": "Bidra med oppdateringer?",
+        "source_code": "Kildekode"
+    },
+    "kommune": {
+        "contribute": "Kan du bidra?",
+        "missing": "Dessverre manglar informasjon for denne kommunen.",
+        "program": "Program"
+    },
+    "language_selector": {
+        "select_language": "Velg språk"
+    },
+    "main": {
+        "title": "Finn 1. mai program for der du bor"
+    },
+    "menu_service": {
+        "select_year": "Velg år",
+        "select_fylke": "Velg fylke",
+        "select_kommune": "Velg kommune"
+    },
+    "updates": {
+        "example": "Eksempel",
+        "email_line1": "Subject/emne: 1. mai link til Minby",
+        "email_line2": "Beskrivelse: Minby kommunes program",
+        "email_line3": "Hilsen",
+        "paragraph1a": "Du kan sende epost med oppdateringer til",
+        "paragraph1b": "som inneholder",
+        "paragraph1c": "samt en veldig kort beskrivelse/tekst til linken.",
+        "paragraph2": "For å filtere vekk spam, pass på å ha med ordet \"skomakermelk\" en eller annen plass i teksten, alle eposter som ikke gjør det blir automatisk slettet.",
+        "paragraph3": "NB, ikke send inn linker til noe på Facebook eller X (tidligere Twitter). De vil under absolutt ingen omstendigheter bli brukt!",
+        "paragraph4a": "Hvis du sender inn flere på en gang kan du helst bruke",
+        "paragraph4b": "enten som tekst i eposten eller som en vedlagt fil (husk å fremdeles få med \"skomakermelk\" i epostteksten).",
+        "back_button": "Tilbake"
+    }
+}

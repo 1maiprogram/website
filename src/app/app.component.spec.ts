@@ -8,6 +8,7 @@ import { createSpyFromClass, Spy } from "@copy/vitest-auto-spies";
 
 import { AppComponent } from "./app.component";
 import { MenuService } from "./menu.service";
+import { getTranslocoModule } from "./transloco-testing.module";
 
 describe("AppComponent", () => {
     let activatedRouteSpy: Spy<ActivatedRoute>;
@@ -20,6 +21,7 @@ describe("AppComponent", () => {
         await TestBed.configureTestingModule({
             imports: [
                 AppComponent,
+                getTranslocoModule({}),
             ],
             providers: [
                 { provide: MenuService, useValue: menuServiceSpy },

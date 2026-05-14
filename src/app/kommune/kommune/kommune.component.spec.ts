@@ -14,6 +14,7 @@ import { createSpyFromClass, Spy } from "@copy/vitest-auto-spies";
 import { KommuneComponent } from "./kommune.component";
 import { MenuItem, MenuService } from "../../menu.service";
 import { appProviders } from "../../app.config";
+import { getTranslocoModule } from "../../transloco-testing.module";
 
 describe("KommuneComponent", () => {
     let component: KommuneComponent;
@@ -27,6 +28,7 @@ describe("KommuneComponent", () => {
         await TestBed.configureTestingModule({
             imports: [
                 KommuneComponent,
+                getTranslocoModule({}),
             ],
             providers: [
                 ...appProviders,

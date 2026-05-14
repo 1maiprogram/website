@@ -10,3 +10,10 @@ const collator = new Intl.Collator("no", {
 export function nameSortFunction<T extends { name: string }>(a: T, b: T) {
     return collator.compare(a.name, b.name);
 }
+
+export function isEventTarget<T extends EventTarget>(
+    target: EventTarget | null,
+    ctor: new (...args: any[]) => T,
+): target is T {
+    return target instanceof ctor;
+}

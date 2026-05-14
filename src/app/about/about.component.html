@@ -4,18 +4,11 @@ SPDX-FileCopyrightText: 2025 Håkon Løvdal <kode@denkule.no>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
+<ng-container *transloco="let t; prefix: 'about'">
 <div class="content">
-    <p>
-        Har du tenkt å kanskje bli med å gå i 1. maitog og så lurer du på når det
-        starter?
-    </p>
-    <p>
-        Men når du søker på intenett så finner du enten ingen referanser
-        eller så er det bare gamle program for tidligere år?
-    </p>
-    <p>
-        Med denne websiden trenger du aldri å være i tvil lenger og kan alltid
-        finne årets program direkte.
-    </p>
-    <button ngxBackButton="/">Tilbake</button>
+    <p>{{ t('paragraph1') }}</p>
+    <p>{{ t('paragraph2') }}</p>
+    <p>{{ t('paragraph3') }}</p>
+    <button ngxBackButton="/">{{ t('back_button') }}</button>
 </div>
+</ng-container>

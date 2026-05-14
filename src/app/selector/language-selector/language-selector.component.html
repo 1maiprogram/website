@@ -1,0 +1,22 @@
+<!--
+SPDX-FileCopyrightText: 2026 Håkon Løvdal <kode@denkule.no>
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
+<ng-container *transloco="let t; prefix: 'language_selector'">
+<span class="content">
+    {{ t('select_language') }}:
+    <select [value]="selectedLanguage" (change)="onLanguageChange($event)">
+        @for (lang of languages; track lang.iso639_1code) {
+            @if (lang.iso639_1code === selectedLanguage) {
+                <option [value]="lang.iso639_1code" selected>
+                    &#9989;<!-- Green heavy check mark, https://www.htmlsymbols.xyz/unicode/U%2b2705 -->
+                    {{ lang.flagEmoji }} {{ lang.displayName }}</option>
+            } @else {
+                <option [value]="lang.iso639_1code">{{ lang.flagEmoji }} {{ lang.displayName }}</option>
+            }
+        }
+    </select>
+</span>
+</ng-container>

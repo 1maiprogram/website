@@ -20,6 +20,7 @@ import {
     switchMap,
 } from "rxjs";
 import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
+import { TranslocoModule } from "@jsverse/transloco";
 
 import { MenuItem, MenuService } from "../../menu.service";
 import {
@@ -36,6 +37,7 @@ import { SpinnerComponent } from "../../shared/spinner/spinner.component";
         CommonModule,
         SpinnerComponent,
         RouterLink,
+        TranslocoModule,
     ],
     templateUrl: "./kommune.component.html",
     styleUrl: "./kommune.component.scss",
