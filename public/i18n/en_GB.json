@@ -5,6 +5,11 @@
         "paragraph3": "With this website you never have to doubt anymore and can always find the current year's program directly.",
         "back_button": "Back"
     },
+    "footer": {
+        "about": "About this website",
+        "contributing": "Contributing updates?",
+        "source_code": "Source code"
+    },
     "language_selector": {
         "select_language": "Select language"
     }

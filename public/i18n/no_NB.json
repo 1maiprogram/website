@@ -5,6 +5,11 @@
         "paragraph3": "Med denne websiden trenger du aldri å være i tvil lenger og kan alltid finne årets program direkte.",
         "back_button": "Tilbake"
     },
+    "footer": {
+        "about": "Om denne siden",
+        "contributing": "Bidra med oppdateringer?",
+        "source_code": "Kildekode"
+    },
     "language_selector": {
         "select_language": "Velg språk"
     }
