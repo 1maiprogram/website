@@ -12,7 +12,7 @@
     "zzzz-last-script": ""
   },
   "private": true,
-  "packageManager": "npm@10.9.4",
+  "packageManager": "npm@11.15.0",
   "overrides": {
   },
   "dependencies": {
