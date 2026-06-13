@@ -7,11 +7,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <div class="background-image-container">
   <img ngSrc="/assets/images/workers.png" alt="" class="background-image" fill loading="lazy">
 </div>
-<ng-container *transloco="let t; prefix: 'main'">
-<main class="main">
-  <h1>{{ t('title') }}</h1>
 
-  <div class="content">
+<ng-container *transloco="let t; prefix: 'main'">
+<header>
+  <h1>{{ t('title') }}</h1>
+</header>
+</ng-container>
+
+<nav>
+  <div class="navigation">
     @for (menuItem of menuItems; track menuItem) {
       <span>
         @if (menuItem.visibleSignal()) {
@@ -20,13 +24,13 @@ SPDX-License-Identifier: GPL-3.0-or-later
       </span>
     }
   </div>
-
-</main>
-</ng-container>
+</nav>
 
 <hr>
 
-<router-outlet />
+<main>
+  <router-outlet />
+</main>
 
 <ng-container *transloco="let t; prefix: 'footer'">
 <footer>
