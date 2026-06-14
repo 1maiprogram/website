@@ -6,10 +6,10 @@ import { TranslocoTestingModule, TranslocoTestingOptions } from "@jsverse/transl
 
 import { availableLangs, defaultLang, SupportedLanuages } from "./available-langs";
 
-import no_NB from '@public/i18n/no_NB.json';
-import no_NN from '@public/i18n/no_NN.json';
-import no_SE from '@public/i18n/no_SE.json';
-import en_GB from '@public/i18n/en_GB.json';
+import no_NB from "@public/i18n/no_NB.json";
+import no_NN from "@public/i18n/no_NN.json";
+import no_SE from "@public/i18n/no_SE.json";
+import en_GB from "@public/i18n/en_GB.json";
 
 type LangsObjType = { [key in SupportedLanuages]: any };
 const LangsObj: LangsObjType = {
