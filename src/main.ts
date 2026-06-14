@@ -14,15 +14,17 @@ declare global {
     }
 }
 
-Sentry.init({
-    dsn: "https://30915f0b8604a10b242ef0d4e44b3927@o4510201394888704.ingest.de.sentry.io/4510201399148624",
-    release: "main",
-    integrations: [
-        Sentry.browserTracingIntegration(),
-    ],
-    tracesSampleRate: 1,
-    enableLogs: true,
-    sendDefaultPii: true,
+requestIdleCallback(() => {
+    Sentry.init({
+        dsn: "https://30915f0b8604a10b242ef0d4e44b3927@o4510201394888704.ingest.de.sentry.io/4510201399148624",
+        release: "main",
+        integrations: [
+            Sentry.browserTracingIntegration(),
+        ],
+        tracesSampleRate: 1,
+        enableLogs: true,
+        sendDefaultPii: true,
+    });
 });
 
 bootstrapApplication(AppComponent, appConfig)
