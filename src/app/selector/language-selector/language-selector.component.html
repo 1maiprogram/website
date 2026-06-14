@@ -6,8 +6,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 <ng-container *transloco="let t; prefix: 'language_selector'">
 <span class="content">
-    {{ t('select_language') }}:
-    <select [value]="selectedLanguage" (change)="onLanguageChange($event)">
+    <label for="language-selector">{{ t('select_language') }}:</label>
+    <select id="language-selector" [value]="selectedLanguage" (change)="onLanguageChange($event)">
         @for (lang of languages; track lang.iso639_1code) {
             @if (lang.iso639_1code === selectedLanguage) {
                 <option [value]="lang.iso639_1code" selected>

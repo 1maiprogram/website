@@ -10,6 +10,9 @@
         "contributing": "Hjelpe til med oppdateringar?",
         "source_code": "Kjeldekode"
     },
+    "header": {
+        "title": "Finn 1. mai program for der du bur"
+    },
     "kommune": {
         "contribute": "Kan du bidra?",
         "missing": "Dessverre manglar informasjon for denne kommunen.",
@@ -17,9 +20,6 @@
     },
     "language_selector": {
         "select_language": "Vel språk"
-    },
-    "main": {
-        "title": "Finn 1. mai program for der du bur"
     },
     "menu_service": {
         "select_year": "Vel år",

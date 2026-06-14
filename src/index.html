@@ -22,25 +22,22 @@ SPDX-License-Identifier: GPL-3.0-or-later
             min-height: 100vh;
             width: 100vw;
         }
-
-        body {
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), /* https://stackoverflow.com/a/62033585/23118 */
-                url('/assets/images/workers.png');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-color: #fefbea;
-            background-position: center;
-        }
-        @media (max-width: 1120px) {
-            body {
-                background-size: contain;
-            }
-        }
     </style>
 </head>
 
 <body>
+    <script type="text/javascript">
+        window.showLoadingScreen = true;
+        setTimeout(() => {
+            if (window.showLoadingScreen) {
+                document.getElementById("loading").style.display = "block";
+            }
+        }, 500);
+    </script>
+    <div id="loading" style="display: none">
+        <h1>Loading...</h1>
+        <p style="padding: 1em">Please wait while the application is loading. This may take a few seconds.</p>
+    </div>
     <app-root></app-root>
     <noscript>
         <div style="background-color: red; font-size: 3em; margin: 1em; padding: 1em">

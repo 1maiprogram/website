@@ -6,6 +6,7 @@ import { Component } from "@angular/core";
 
 import { RouterLink, RouterOutlet } from "@angular/router";
 import { TranslocoModule, TranslocoService } from "@jsverse/transloco";
+import { NgOptimizedImage } from '@angular/common';
 
 import { MenuItem, MenuService } from "./menu.service";
 import { LanguageSelectorComponent } from "./selector/language-selector/language-selector.component";
@@ -17,6 +18,7 @@ import { LanguageSelectorComponent } from "./selector/language-selector/language
         RouterLink,
         LanguageSelectorComponent,
         TranslocoModule,
+        NgOptimizedImage,
     ],
     templateUrl: "./app.component.html",
     styleUrl: "./app.component.scss",

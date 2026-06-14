@@ -10,6 +10,9 @@
         "contributing": "Contributing updates?",
         "source_code": "Source code"
     },
+    "header": {
+        "title": "Find the 1st of May program for your area"
+    },
     "kommune": {
         "contribute": "Can you contribute?",
         "missing": "Unfortunately, information for this municipality is missing.",
@@ -17,9 +20,6 @@
     },
     "language_selector": {
         "select_language": "Select language"
-    },
-    "main": {
-        "title": "Find the 1st of May program for your area"
     },
     "menu_service": {
         "select_year": "Select year",
