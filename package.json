@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && npm run sentry:sourcemaps",
+    "build": "ng build --configuration production && npm run sentry:sourcemaps",
     "postbuild": "find dist -name '*.license' -print0 | xargs -0 --no-run-if-empty rm",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false",
