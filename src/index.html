@@ -26,6 +26,18 @@ SPDX-License-Identifier: GPL-3.0-or-later
 </head>
 
 <body>
+    <script type="text/javascript">
+        window.showLoadingScreen = true;
+        setTimeout(() => {
+            if (window.showLoadingScreen) {
+                document.getElementById("loading").style.display = "block";
+            }
+        }, 500);
+    </script>
+    <div id="loading" style="display: none">
+        <h1>Loading...</h1>
+        <p style="padding: 1em">Please wait while the application is loading. This may take a few seconds.</p>
+    </div>
     <app-root></app-root>
     <noscript>
         <div style="background-color: red; font-size: 3em; margin: 1em; padding: 1em">
