@@ -23,11 +23,11 @@
     "@angular/platform-browser": "^21.2.7",
     "@angular/platform-browser-dynamic": "^21.2.7",
     "@angular/router": "^21.2.7",
-    "@jsverse/transloco": "^8.3.0",
+    "@jsverse/transloco": "^8.4.0",
     "@ngneat/until-destroy": "^10.0.0",
-    "@sentry/angular": "^10.57.0",
+    "@sentry/angular": "^10.58.0",
     "@sentry/cli": "^3.5.0",
-    "@supabase/supabase-js": "^2.108.1",
+    "@supabase/supabase-js": "^2.108.2",
     "ngx-back-button": "^21.1.1",
     "rxjs": "~7.8.2",
     "tslib": "^2.8.1",
@@ -41,7 +41,7 @@
     "jsdom": "^29.1.1",
     "prettier": "^3.8.4",
     "typescript": "~5.9.3",
-    "vitest": "^4.1.8",
+    "vitest": "^4.1.9",
     "zzzzz-last-devdependencies": "github:AngelsProgram/zzzzz-last-dependency#install"
   }
 }
