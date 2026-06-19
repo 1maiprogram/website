@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { ActivatedRoute, Router, RouterLink } from "@angular/router";
 import { UntilDestroy } from "@ngneat/until-destroy";
@@ -17,6 +17,7 @@ import { MenuService } from "../../menu.service";
         RouterLink,
     ],
     templateUrl: "./fylke-selector.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./fylke-selector.component.scss",
 })
 export class FylkeSelectorComponent {

@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { NgxBackButtonDirective } from "ngx-back-button";
 import { TranslocoModule } from "@jsverse/transloco";
 
@@ -14,6 +14,7 @@ import { MenuService } from "../menu.service";
         TranslocoModule,
     ],
     templateUrl: "./about.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./about.component.scss",
 })
 export class AboutComponent {
