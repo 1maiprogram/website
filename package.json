@@ -38,6 +38,7 @@
     "@angular/compiler-cli": "^22.0.2",
     "@hirez_io/auto-spies-core": "^3.0.0",
     "jsdom": "^29.1.1",
+    "patch-package": "^8.0.1",
     "prettier": "^3.8.4",
     "typescript": "~6.0.3",
     "vitest": "^4.1.9",
