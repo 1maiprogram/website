@@ -4,6 +4,7 @@
 
 import { bootstrapApplication } from "@angular/platform-browser";
 import * as Sentry from "@sentry/angular";
+import { shim } from "@horat1us/request-idle-callback";
 
 import { appConfig } from "./app/app.config";
 import { AppComponent } from "./app/app.component";
@@ -13,6 +14,8 @@ declare global {
         showLoadingScreen: boolean;
     }
 }
+
+shim();
 
 requestIdleCallback(() => {
     Sentry.init({
