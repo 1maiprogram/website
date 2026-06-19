@@ -16,12 +16,12 @@
   "overrides": {
   },
   "dependencies": {
-    "@angular/common": "^21.2.7",
-    "@angular/compiler": "^21.2.7",
-    "@angular/core": "^21.2.7",
-    "@angular/forms": "^21.2.7",
-    "@angular/platform-browser": "^21.2.7",
-    "@angular/router": "^21.2.7",
+    "@angular/common": "^22.0.2",
+    "@angular/compiler": "^22.0.2",
+    "@angular/core": "^22.0.2",
+    "@angular/forms": "^22.0.2",
+    "@angular/platform-browser": "^22.0.2",
+    "@angular/router": "^22.0.2",
     "@jsverse/transloco": "^8.4.0",
     "@ngneat/until-destroy": "^10.0.0",
     "@sentry/angular": "^10.58.0",
@@ -33,13 +33,13 @@
     "zzzzz-last-dependencies": "github:AngelsProgram/zzzzz-last-dependency#install"
   },
   "devDependencies": {
-    "@angular/build": "^21.2.6",
-    "@angular/cli": "^21.2.6",
-    "@angular/compiler-cli": "^21.2.7",
+    "@angular/build": "^22.0.3",
+    "@angular/cli": "^22.0.3",
+    "@angular/compiler-cli": "^22.0.2",
     "@hirez_io/auto-spies-core": "^3.0.0",
     "jsdom": "^29.1.1",
     "prettier": "^3.8.4",
-    "typescript": "~5.9.3",
+    "typescript": "~6.0.3",
     "vitest": "^4.1.9",
     "zzzzz-last-devdependencies": "github:AngelsProgram/zzzzz-last-dependency#install"
   }

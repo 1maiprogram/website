@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { RouterLink } from "@angular/router";
 
 import { MenuService } from "../../menu.service";
@@ -15,6 +15,7 @@ export const currentYear = 2026;
         RouterLink,
     ],
     templateUrl: "./year-selector.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./year-selector.component.scss",
 })
 export class YearSelectorComponent {

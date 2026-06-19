@@ -2,13 +2,13 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { TranslocoModule, TranslocoService } from "@jsverse/transloco";
 
 import { availableLangs, defaultLang, languages, SupportedLanuages } from "../../available-langs";
 import { isEventTarget } from "@shared/utils";
 
-const LANG_KEY = 'language';
+const LANG_KEY = "language";
 
 @Component({
     selector: "app-language-selector",
@@ -16,6 +16,7 @@ const LANG_KEY = 'language';
         TranslocoModule,
     ],
     templateUrl: "./language-selector.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./language-selector.component.scss",
 })
 export class LanguageSelectorComponent implements OnInit {

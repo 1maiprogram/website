@@ -2,11 +2,11 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { RouterLink, RouterOutlet } from "@angular/router";
 import { TranslocoModule, TranslocoService } from "@jsverse/transloco";
-import { NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from "@angular/common";
 
 import { MenuItem, MenuService } from "./menu.service";
 import { LanguageSelectorComponent } from "./selector/language-selector/language-selector.component";
@@ -21,6 +21,7 @@ import { LanguageSelectorComponent } from "./selector/language-selector/language
         NgOptimizedImage,
     ],
     templateUrl: "./app.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./app.component.scss",
 })
 export class AppComponent {

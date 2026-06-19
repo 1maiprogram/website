@@ -9,7 +9,7 @@ import {
     provideZonelessChangeDetection,
 } from "@angular/core";
 import { provideRouter } from "@angular/router";
-import { provideHttpClient } from "@angular/common/http";
+import { provideHttpClient, withXhr } from "@angular/common/http";
 import { provideTransloco } from "@jsverse/transloco";
 
 import { routes } from "./app.routes";
@@ -20,7 +20,7 @@ export const appProviders = [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
-    provideHttpClient(),
+    provideHttpClient(withXhr()),
     provideTransloco({
         config: {
             availableLangs: availableLangs,

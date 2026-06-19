@@ -6,6 +6,7 @@ import { CommonModule } from "@angular/common";
 import {
     Component,
     OnInit,
+    ChangeDetectionStrategy,
 } from "@angular/core";
 import {
     ActivatedRoute,
@@ -40,6 +41,7 @@ import { SpinnerComponent } from "../../shared/spinner/spinner.component";
         TranslocoModule,
     ],
     templateUrl: "./kommune.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./kommune.component.scss",
 })
 export class KommuneComponent implements OnInit {

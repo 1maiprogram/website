@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import {
     ActivatedRoute,
@@ -20,6 +20,7 @@ import { paramMapNameYear, paramMapNameFylke } from "../../app.routes.constants"
         RouterLink,
     ],
     templateUrl: "./kommune-selector.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./kommune-selector.component.scss",
 })
 export class KommuneSelectorComponent implements OnInit {
