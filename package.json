@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "postinstall": "patch-package",
     "start": "ng serve",
     "build": "ng build --configuration production && npm run sentry:sourcemaps",
     "postbuild": "find dist -name '*.license' -print0 | xargs -0 --no-run-if-empty rm",
