@@ -7,6 +7,8 @@ import {
     Component,
     OnInit,
     ChangeDetectionStrategy,
+    inject,
+    DestroyRef,
 } from "@angular/core";
 import {
     ActivatedRoute,
@@ -20,7 +22,7 @@ import {
     skip,
     switchMap,
 } from "rxjs";
-import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
+import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { TranslocoModule } from "@jsverse/transloco";
 
 import { MenuItem, MenuService } from "../../menu.service";
@@ -31,7 +33,6 @@ import {
 import { Link, SupabaseService } from "../../supabase.service";
 import { SpinnerComponent } from "../../shared/spinner/spinner.component";
 
-@UntilDestroy()
 @Component({
     selector: "app-kommune",
     imports: [
@@ -46,6 +47,7 @@ import { SpinnerComponent } from "../../shared/spinner/spinner.component";
 })
 export class KommuneComponent implements OnInit {
     private readonly menuItem: MenuItem;
+    private destroyRef = inject(DestroyRef);
 
     public links$ = new BehaviorSubject<Link[]>([]);
     public noLinks$ = new BehaviorSubject<boolean>(false);
@@ -89,7 +91,7 @@ export class KommuneComponent implements OnInit {
         this.supabaseService
             .getLinks(year, fylke, kommune)
             .pipe(
-                untilDestroyed(this),
+                takeUntilDestroyed(this.destroyRef),
             )
             .subscribe((links) => {
                 // Using this intermediate observable variable to avoid
