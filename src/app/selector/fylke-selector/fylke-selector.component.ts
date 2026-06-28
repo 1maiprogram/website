@@ -5,12 +5,10 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core";
 
 import { ActivatedRoute, Router, RouterLink } from "@angular/router";
-import { UntilDestroy } from "@ngneat/until-destroy";
 
 import { Fylke, RegionService } from "../../region/region.service";
 import { MenuService } from "../../menu.service";
 
-@UntilDestroy()
 @Component({
     selector: "app-fylke-selector",
     imports: [
