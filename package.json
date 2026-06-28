@@ -24,7 +24,6 @@
     "@angular/router": "^22.0.2",
     "@horat1us/request-idle-callback": "^1.0.6",
     "@jsverse/transloco": "^8.4.0",
-    "@ngneat/until-destroy": "^10.0.0",
     "@sentry/angular": "^10.58.0",
     "@sentry/cli": "^3.5.0",
     "@supabase/supabase-js": "^2.108.2",
