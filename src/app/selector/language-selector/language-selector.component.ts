@@ -7,6 +7,7 @@ import { TranslocoModule, TranslocoService } from "@jsverse/transloco";
 
 import { availableLangs, defaultLang, languages, SupportedLanuages } from "../../available-langs";
 import { isEventTarget } from "@shared/utils";
+import { StorageService } from "../../storage.service";
 
 const LANG_KEY = "language";
 
@@ -21,12 +22,13 @@ const LANG_KEY = "language";
 })
 export class LanguageSelectorComponent implements OnInit {
     private translocoService = inject(TranslocoService);
+    private readonly storageService = inject(StorageService);
 
     selectedLanguage: string = defaultLang;
     languages = languages;
 
     constructor() {
-        const savedLanguage = localStorage.getItem(LANG_KEY);
+        const savedLanguage = this.storageService.getItem(LANG_KEY);
         if (savedLanguage) {
             if (availableLangs.includes(savedLanguage as SupportedLanuages)) {
                 this.selectedLanguage = savedLanguage;
@@ -45,7 +47,7 @@ export class LanguageSelectorComponent implements OnInit {
             throw new Error(`Expected e.target to be HTMLSelectElement, e was ${e?.constructor?.name ?? e}`);
         }
         this.selectedLanguage = e.target.value;
-        localStorage.setItem(LANG_KEY, this.selectedLanguage);
+        this.storageService.setItem(LANG_KEY, this.selectedLanguage);
         this.translocoService.setActiveLang(this.selectedLanguage);
     }
 }
