@@ -1,0 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Håkon Løvdal <kode@denkule.no>
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+import { Service } from "@angular/core";
+
+@Service()
+export class StorageService {}
