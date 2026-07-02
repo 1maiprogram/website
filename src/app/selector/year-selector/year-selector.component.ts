@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, inject } from "@angular/core";
 import { RouterLink } from "@angular/router";
 
 import { MenuService } from "../../menu.service";
@@ -23,10 +23,9 @@ export class YearSelectorComponent {
         2026,
         2025,
     ];
+    readonly menuService = inject(MenuService);
 
-    constructor(
-        readonly menuService: MenuService,
-    ) {
+    constructor() {
         this.menuService.activateMenuItem("YearSelector");
     }
 }

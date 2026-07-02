@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, inject } from "@angular/core";
 import { NgxBackButtonDirective } from "ngx-back-button";
 import { TranslocoModule } from "@jsverse/transloco";
 
@@ -19,11 +19,11 @@ import { MenuService } from "../menu.service";
     styleUrl: "./oppdatering.component.scss",
 })
 export class OppdateringComponent {
+    readonly menuService = inject(MenuService);
 
-    constructor(
-        readonly menuService: MenuService,
-    ) {
+    constructor() {
+        const menuService = this.menuService;
+
         menuService.hideMenuItems();
     }
-
 }

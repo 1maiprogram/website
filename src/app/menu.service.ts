@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Injectable, signal, WritableSignal } from "@angular/core";
+import { Injectable, signal, WritableSignal, inject } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import {
     filter,
@@ -19,7 +19,7 @@ export const MenuItemKeyObj = {
     KommuneSelector: "KommuneSelector",
     Kommune: "Kommune",
 } as const;
-export type MenuItemKey = keyof(typeof MenuItemKeyObj);
+export type MenuItemKey = keyof typeof MenuItemKeyObj;
 
 export class MenuItem {
     textSignal: WritableSignal<string>;
@@ -42,37 +42,40 @@ export class MenuItem {
     providedIn: "root",
 })
 export class MenuService {
+    private router = inject(Router);
+    private translocoService = inject(TranslocoService);
+
     private menuItemsMap = new Map<string, MenuItem>();
     private yearSelectorMenuItem = new MenuItem("Velg år", yearSelectorRoutePath, true);
     private fylkeSelectorMenuItem = new MenuItem("Velg fylke", "this initial value is not used", true);
     private kommuneSelectorMenuItem = new MenuItem("Velg kommune", "", false);
     private kommuneMenuItem = new MenuItem("", "", false);
 
-    constructor(
-        private router: Router,
-        private translocoService: TranslocoService
-    ) {
-        this.translocoService.selectTranslate("menu_service.select_year")
+    constructor() {
+        this.translocoService
+            .selectTranslate("menu_service.select_year")
             .pipe(takeUntilDestroyed())
-            .subscribe(value => this.yearSelectorMenuItem.textSignal.set(value));
+            .subscribe((value) => this.yearSelectorMenuItem.textSignal.set(value));
 
-        this.translocoService.selectTranslate("menu_service.select_fylke")
+        this.translocoService
+            .selectTranslate("menu_service.select_fylke")
             .pipe(takeUntilDestroyed())
-            .subscribe(value => this.fylkeSelectorMenuItem.textSignal.set(value));
+            .subscribe((value) => this.fylkeSelectorMenuItem.textSignal.set(value));
 
-        this.translocoService.selectTranslate("menu_service.select_kommune")
+        this.translocoService
+            .selectTranslate("menu_service.select_kommune")
             .pipe(takeUntilDestroyed())
-            .subscribe(value => this.kommuneSelectorMenuItem.textSignal.set(value));
+            .subscribe((value) => this.kommuneSelectorMenuItem.textSignal.set(value));
 
         this.yearSelectorMenuItem.child = this.fylkeSelectorMenuItem;
 
         this.router.events
             .pipe(
-                filter(event => event instanceof NavigationEnd),
-                map(event => event.url),
+                filter((event) => event instanceof NavigationEnd),
+                map((event) => event.url),
                 takeUntilDestroyed(),
             )
-            .subscribe(url => { // e.g. " /2026" or "/2026/Agder" etc
+            .subscribe((url) => { // e.g. " /2026" or "/2026/Agder" etc
                 const year = url.split("/")[1];
                 this.fylkeSelectorMenuItem.urlSignal.set(year);
             });
@@ -126,7 +129,7 @@ export class MenuService {
     }
 
     hideMenuItems() {
-        this.getMenuItems().forEach(menuItem => {
+        this.getMenuItems().forEach((menuItem) => {
             menuItem.visibleSignal.set(false);
         });
     }

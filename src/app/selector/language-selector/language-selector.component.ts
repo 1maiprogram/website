@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy, inject } from "@angular/core";
 import { TranslocoModule, TranslocoService } from "@jsverse/transloco";
 
 import { availableLangs, defaultLang, languages, SupportedLanuages } from "../../available-langs";
@@ -20,12 +20,12 @@ const LANG_KEY = "language";
     styleUrl: "./language-selector.component.scss",
 })
 export class LanguageSelectorComponent implements OnInit {
+    private translocoService = inject(TranslocoService);
+
     selectedLanguage: string = defaultLang;
     languages = languages;
 
-    constructor(
-        private translocoService: TranslocoService,
-    ) {
+    constructor() {
         const savedLanguage = localStorage.getItem(LANG_KEY);
         if (savedLanguage) {
             if (availableLangs.includes(savedLanguage as SupportedLanuages)) {

@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, inject } from "@angular/core";
 
 import { ActivatedRoute, Router, RouterLink } from "@angular/router";
 
@@ -19,14 +19,16 @@ import { MenuService } from "../../menu.service";
     styleUrl: "./fylke-selector.component.scss",
 })
 export class FylkeSelectorComponent {
+    regionService = inject(RegionService);
+    readonly router = inject(Router);
+    readonly menuService = inject(MenuService);
+    private readonly route = inject(ActivatedRoute);
+
     public fylker: Fylke[] = [];
 
-    constructor(
-        public regionService: RegionService,
-        readonly router: Router,
-        readonly menuService: MenuService,
-        private readonly route: ActivatedRoute,
-    ) {
+    constructor() {
+        const regionService = this.regionService;
+
         this.fylker = regionService.getNoFylkeArray();
         const year = this.route.snapshot.url.map((segment) => segment.path)[0];
         this.menuService.getMenuItem("FylkeSelector").urlSignal.set(year);

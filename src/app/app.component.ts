@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ChangeDetectionStrategy, inject } from "@angular/core";
 
 import { RouterLink, RouterOutlet } from "@angular/router";
 import { TranslocoModule, TranslocoService } from "@jsverse/transloco";
@@ -25,12 +25,13 @@ import { LanguageSelectorComponent } from "./selector/language-selector/language
     styleUrl: "./app.component.scss",
 })
 export class AppComponent {
+    private translocoService = inject(TranslocoService);
+
     public menuItems: MenuItem[];
 
-    constructor(
-        menuService: MenuService,
-        private translocoService: TranslocoService,
-    ) {
+    constructor() {
+        const menuService = inject(MenuService);
+
         this.menuItems = menuService.getMenuItems();
     }
 }

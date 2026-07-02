@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy, inject } from "@angular/core";
 
 import {
     ActivatedRoute,
@@ -16,22 +16,20 @@ import { paramMapNameYear, paramMapNameFylke } from "../../app.routes.constants"
 
 @Component({
     selector: "app-kommune-selector",
-    imports: [
-        RouterLink,
-    ],
+    imports: [RouterLink],
     templateUrl: "./kommune-selector.component.html",
     changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: "./kommune-selector.component.scss",
 })
 export class KommuneSelectorComponent implements OnInit {
+    regionService = inject(RegionService);
+    private readonly route = inject(ActivatedRoute);
+    readonly router = inject(Router);
+    menuService = inject(MenuService);
+
     public kommuner: Kommune[] = [];
 
-    constructor(
-        public regionService: RegionService,
-        private readonly route: ActivatedRoute,
-        readonly router: Router,
-        public menuService: MenuService,
-    ) {
+    constructor() {
         this.menuService.activateMenuItem("KommuneSelector");
     }
 

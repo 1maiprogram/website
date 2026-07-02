@@ -4,23 +4,23 @@
 
 import { CommonModule } from "@angular/common";
 import {
-    Component,
-    OnInit,
-    ChangeDetectionStrategy,
-    inject,
-    DestroyRef,
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  inject,
+  DestroyRef,
 } from "@angular/core";
 import {
-    ActivatedRoute,
-    RouterLink,
+  ActivatedRoute,
+  RouterLink,
 } from "@angular/router";
 import {
-    BehaviorSubject,
-    concat,
-    Observable,
-    of,
-    skip,
-    switchMap,
+  BehaviorSubject,
+  concat,
+  Observable,
+  of,
+  skip,
+  switchMap,
 } from "rxjs";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { TranslocoModule } from "@jsverse/transloco";
@@ -46,6 +46,10 @@ import { SpinnerComponent } from "../../shared/spinner/spinner.component";
     styleUrl: "./kommune.component.scss",
 })
 export class KommuneComponent implements OnInit {
+    private readonly route = inject(ActivatedRoute);
+    private readonly menuService = inject(MenuService);
+    private readonly supabaseService = inject(SupabaseService);
+
     private readonly menuItem: MenuItem;
     private destroyRef = inject(DestroyRef);
 
@@ -53,11 +57,9 @@ export class KommuneComponent implements OnInit {
     public noLinks$ = new BehaviorSubject<boolean>(false);
     public loading$: Observable<boolean> = new BehaviorSubject<boolean>(true);
 
-    constructor(
-        private readonly route: ActivatedRoute,
-        private readonly menuService: MenuService,
-        private readonly supabaseService: SupabaseService,
-    ) {
+    constructor() {
+        const menuService = this.menuService;
+
         menuService.activateMenuItem("Kommune");
         this.menuItem = menuService.getMenuItem("Kommune");
     }
