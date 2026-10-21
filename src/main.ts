@@ -25,8 +25,6 @@ requestIdleCallback(() => {
             Sentry.browserTracingIntegration(),
         ],
         tracesSampleRate: 1,
-        enableLogs: true,
-        sendDefaultPii: true,
     });
 });
 
