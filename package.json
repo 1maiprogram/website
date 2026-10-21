@@ -24,7 +24,7 @@
     "@angular/router": "^22.2.3",
     "@horat1us/request-idle-callback": "^1.0.6",
     "@jsverse/transloco": "^8.4.0",
-    "@sentry/angular": "^10.70.0",
+    "@sentry/angular": "^11.8.0",
     "@sentry/cli": "^3.8.0",
     "@supabase/supabase-js": "^2.118.0",
     "ngx-back-button": "^21.3.0",
